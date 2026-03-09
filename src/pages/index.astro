@@ -1,0 +1,23 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const appUrl = "https://app.gridforesight.com";
+---
+
+<Layout title="GridForesight — Energy Forecasting Platform">
+  <main class="flex min-h-screen flex-col items-center justify-center px-6 text-center">
+    <h1 class="text-4xl font-bold tracking-tight sm:text-6xl">
+      GridForesight
+    </h1>
+    <p class="mt-6 max-w-2xl text-lg text-gray-600">
+      ML-powered energy forecasting. Predict demand, optimize operations, and
+      make data-driven decisions for your energy assets.
+    </p>
+    <a
+      href={appUrl}
+      class="mt-10 rounded-lg bg-blue-600 px-8 py-3 text-lg font-semibold text-white transition hover:bg-blue-700"
+    >
+      Go to App
+    </a>
+  </main>
+</Layout>

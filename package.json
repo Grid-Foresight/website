@@ -1,0 +1,21 @@
+{
+	"name": "@gridforesight/website",
+	"type": "module",
+	"version": "0.0.1",
+	"scripts": {
+		"dev": "astro dev",
+		"build": "astro build",
+		"preview": "astro preview",
+		"lint": "biome check .",
+		"lint:fix": "biome check --write .",
+		"astro": "astro"
+	},
+	"dependencies": {
+		"@tailwindcss/vite": "^4.2.1",
+		"astro": "^5.17.1",
+		"tailwindcss": "^4.2.1"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "^2.0.0"
+	}
+}
