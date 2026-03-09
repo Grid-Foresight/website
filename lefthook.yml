@@ -1,0 +1,13 @@
+glob_matcher: doublestar
+
+pre-commit:
+  commands:
+    biome:
+      glob: "**/*.{js,ts,mjs,astro,json,jsonc,css}"
+      run: pnpm biome check --write --unsafe --no-errors-on-unmatched --files-ignore-unknown=true {staged_files}
+      stage_fixed: true
+
+commit-msg:
+  commands:
+    commitlint:
+      run: pnpm exec commitlint --edit {1}
