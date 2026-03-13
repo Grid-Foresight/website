@@ -8,9 +8,11 @@
 		"preview": "astro preview",
 		"lint": "biome check .",
 		"lint:fix": "biome check --write .",
+		"generate:images": "node scripts/generate-images.mjs",
 		"astro": "astro"
 	},
 	"dependencies": {
+		"@astrojs/sitemap": "^3.7.0",
 		"@tailwindcss/vite": "^4.2.1",
 		"astro": "^5.17.1",
 		"tailwindcss": "^4.2.1"
@@ -19,7 +21,9 @@
 		"@biomejs/biome": "^2.0.0",
 		"@commitlint/cli": "^20.4.3",
 		"@commitlint/config-conventional": "^20.4.3",
-		"lefthook": "^2.1.3"
+		"@resvg/resvg-js": "^2.6.2",
+		"lefthook": "^2.1.3",
+		"satori": "^0.25.0"
 	},
 	"pnpm": {
 		"onlyBuiltDependencies": [
