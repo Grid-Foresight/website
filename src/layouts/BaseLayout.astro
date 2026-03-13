@@ -1,0 +1,73 @@
+---
+import "../styles/global.css";
+
+import jetbrainsMonoWoff2 from "@fontsource/jetbrains-mono/files/jetbrains-mono-latin-700-normal.woff2?url";
+import dmSansWoff2 from "@fontsource-variable/dm-sans/files/dm-sans-latin-wght-normal.woff2?url";
+import plusJakartaWoff2 from "@fontsource-variable/plus-jakarta-sans/files/plus-jakarta-sans-latin-wght-normal.woff2?url";
+
+interface Props {
+	title: string;
+	description?: string;
+	canonicalUrl?: string;
+	ogImage?: string;
+}
+
+const {
+	title,
+	description = "ML-powered energy forecasting built on 10+ years of peer-reviewed research at the University of Calgary. Production-ready, research-grade accuracy.",
+	canonicalUrl,
+	ogImage = "/og-image.png",
+} = Astro.props;
+
+const siteUrl = Astro.site?.toString().replace(/\/$/, "") ?? "";
+const fullOgImage = ogImage.startsWith("http") ? ogImage : `${siteUrl}${ogImage}`;
+const canonical = canonicalUrl ?? Astro.url.href;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="theme-color" content="#ffffff" />
+		<meta name="description" content={description} />
+		<meta name="generator" content={Astro.generator} />
+
+		<!-- Favicons -->
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" href="/favicon.ico" sizes="32x32" />
+		<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+		<!-- Canonical -->
+		<link rel="canonical" href={canonical} />
+
+		<!-- Open Graph -->
+		<meta property="og:type" content="website" />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:image" content={fullOgImage} />
+		<meta property="og:url" content={canonical} />
+
+		<!-- Twitter Card -->
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content={title} />
+		<meta name="twitter:description" content={description} />
+		<meta name="twitter:image" content={fullOgImage} />
+
+		<!-- Font preloads -->
+		<link rel="preload" href={plusJakartaWoff2} as="font" type="font/woff2" crossorigin="anonymous" />
+		<link rel="preload" href={dmSansWoff2} as="font" type="font/woff2" crossorigin="anonymous" />
+		<link rel="preload" href={jetbrainsMonoWoff2} as="font" type="font/woff2" crossorigin="anonymous" />
+
+		<title>{title}</title>
+	</head>
+	<body class="font-body bg-bg text-text antialiased">
+		<a
+			href="#main-content"
+			class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:rounded focus:bg-primary focus:px-4 focus:py-2 focus:text-white focus:outline-2 focus:outline-offset-2 focus:outline-primary"
+		>
+			Skip to main content
+		</a>
+		<slot />
+	</body>
+</html>

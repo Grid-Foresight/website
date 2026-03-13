@@ -1,0 +1,44 @@
+---
+const appUrl = "https://app.gridforesight.com";
+---
+
+<section aria-labelledby="final-cta-heading" class="relative overflow-hidden bg-secondary py-24 text-white md:py-32">
+	<!-- Subtle grid pattern -->
+	<div
+		class="pointer-events-none absolute inset-0"
+		style="background-image: repeating-linear-gradient(0deg, transparent, transparent 39px, rgba(255,255,255,0.03) 39px, rgba(255,255,255,0.03) 40px), repeating-linear-gradient(90deg, transparent, transparent 39px, rgba(255,255,255,0.03) 39px, rgba(255,255,255,0.03) 40px);"
+		aria-hidden="true"
+	></div>
+
+	<div class="relative z-10 mx-auto max-w-3xl px-6 text-center">
+		<h2
+			id="final-cta-heading"
+			class="font-display text-3xl font-bold md:text-4xl"
+		>
+			From Peer-Reviewed Research to Your Grid
+		</h2>
+
+		<p class="mx-auto mt-6 max-w-2xl text-lg text-white/85">
+			GridForesight brings a decade of University of Calgary energy systems research into a
+			production-ready forecasting platform. See what research-grade accuracy looks like in
+			practice.
+		</p>
+
+		<div class="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
+			<a
+				href={appUrl}
+				class="inline-flex min-h-[44px] items-center rounded bg-white px-8 py-3.5 text-base font-semibold text-secondary transition-colors hover:bg-neutral-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+			>
+				Start Forecasting
+			</a>
+			<a
+				href="https://gridforesight.ca/"
+				target="_blank"
+				rel="noopener noreferrer"
+				class="inline-flex min-h-[44px] items-center rounded border-2 border-white px-8 py-3.5 text-base font-semibold text-white transition-colors hover:bg-white/10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+			>
+				Visit Grid Foresight Lab
+			</a>
+		</div>
+	</div>
+</section>
