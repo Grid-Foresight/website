@@ -21,6 +21,12 @@
 	"files": {
 		"includes": ["src/**", "astro.config.mjs", "package.json", "tsconfig.json"]
 	},
+	"css": {
+		"parser": {
+			"cssModules": false,
+			"tailwindDirectives": true
+		}
+	},
 	"overrides": [
 		{
 			"includes": ["**/*.astro"],

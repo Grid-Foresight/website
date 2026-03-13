@@ -1,0 +1,25 @@
+---
+const metrics = [
+	{ value: "99.2%", label: "Uptime" },
+	{ value: "< 30s", label: "Prediction latency" },
+	{ value: "5B+", label: "Data points processed" },
+	{ value: "40%", label: "Lower forecast error" },
+];
+---
+
+<section class="bg-bg-base py-12 md:py-16" aria-label="Key metrics">
+	<div
+		class="mx-auto grid max-w-[1280px] grid-cols-2 gap-8 px-6 md:grid-cols-4 md:gap-0 md:divide-x md:divide-bg-subtle md:px-8"
+	>
+		{
+			metrics.map((metric) => (
+				<div class="flex flex-col items-center text-center md:px-8">
+					<span class="font-display text-3xl font-bold tracking-tight text-text-primary tabular-nums md:text-[2.75rem]">
+						{metric.value}
+					</span>
+					<span class="mt-2 text-sm text-text-secondary">{metric.label}</span>
+				</div>
+			))
+		}
+	</div>
+</section>

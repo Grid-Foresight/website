@@ -1,0 +1,35 @@
+---
+const appUrl = "https://app.gridforesight.com";
+---
+
+<section class="relative py-[120px]" aria-labelledby="cta-heading">
+	<!-- Background gradient with glow -->
+	<div class="pointer-events-none absolute inset-0" aria-hidden="true">
+		<div class="bg-gradient-cta absolute inset-0"></div>
+		<div
+			class="bg-glow-primary-ellipse absolute top-1/2 left-1/2 h-[400px] w-[600px] -translate-x-1/2 -translate-y-1/2"
+		>
+		</div>
+	</div>
+
+	<div class="relative mx-auto max-w-[1280px] px-6 text-center md:px-8">
+		<h2
+			id="cta-heading"
+			class="font-display text-3xl font-bold tracking-tight text-text-primary sm:text-4xl lg:text-5xl"
+		>
+			Start forecasting with production-grade ML
+		</h2>
+		<p class="mx-auto mt-6 max-w-lg text-lg text-text-secondary">
+			Ingest your data, train models, and serve predictions. No infrastructure to
+			manage.
+		</p>
+		<div class="mt-10">
+			<a
+				href={appUrl}
+				class="rounded-[--radius-md] bg-primary px-8 py-3.5 text-lg font-semibold text-text-on-primary transition-all duration-150 hover:scale-[1.02] hover:bg-primary-hover"
+			>
+				Start Forecasting
+			</a>
+		</div>
+	</div>
+</section>

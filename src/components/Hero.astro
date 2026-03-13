@@ -1,0 +1,147 @@
+---
+const appUrl = "https://app.gridforesight.com";
+---
+
+<section class="relative overflow-hidden bg-bg-deep pt-[120px] pb-24" aria-labelledby="hero-heading">
+	<!-- Background: radial glow -->
+	<div class="pointer-events-none absolute inset-0" aria-hidden="true">
+		<div
+			class="bg-glow-primary absolute top-1/2 right-0 h-[600px] w-[600px] -translate-y-1/2 translate-x-1/4 rounded-full md:right-1/4"
+		>
+		</div>
+	</div>
+
+	<div
+		class="relative mx-auto grid max-w-[1280px] items-center gap-12 px-6 md:grid-cols-2 md:gap-16 md:px-8"
+	>
+		<!-- Text block -->
+		<div class="max-w-xl">
+			<h1
+				id="hero-heading"
+				class="shimmer-text animate-shimmer font-display text-4xl leading-tight font-bold tracking-tight sm:text-5xl lg:text-[3.5rem]"
+			>
+				Production-grade energy predictions, automated
+			</h1>
+			<p class="mt-6 max-w-lg text-lg leading-relaxed text-text-secondary">
+				Ingest raw energy data. Train forecasting models. Serve sub-minute
+				predictions. Monitor everything. One platform, no glue code.
+			</p>
+			<div class="mt-10 flex flex-wrap gap-4">
+				<a
+					href={appUrl}
+					class="rounded-[--radius-md] bg-primary px-6 py-3 font-semibold text-text-on-primary transition-all duration-150 hover:scale-[1.02] hover:bg-primary-hover"
+				>
+					Start Forecasting
+				</a>
+				<a
+					href="#how-it-works"
+					class="rounded-[--radius-md] border border-primary px-6 py-3 font-semibold text-primary transition-all duration-150 hover:bg-primary/10"
+				>
+					Explore the Platform
+				</a>
+			</div>
+		</div>
+
+		<!-- Hero visual: forecast chart -->
+		<div class="relative">
+			<div
+				class="shadow-glow-primary rounded-[--radius-lg] border border-bg-subtle bg-bg-base p-4 md:p-6"
+			>
+				<svg
+					viewBox="0 0 480 260"
+					fill="none"
+					xmlns="http://www.w3.org/2000/svg"
+					class="w-full"
+					role="img"
+					aria-label="Time-series forecast chart showing actual vs predicted energy demand with confidence interval"
+				>
+					<!-- Grid background -->
+					<line x1="40" y1="20" x2="40" y2="200" stroke="#1e293b" stroke-width="1" />
+					<line x1="150" y1="20" x2="150" y2="200" stroke="#1e293b" stroke-width="1" />
+					<line x1="260" y1="20" x2="260" y2="200" stroke="#1e293b" stroke-width="1" />
+					<line x1="370" y1="20" x2="370" y2="200" stroke="#1e293b" stroke-width="1" />
+					<line x1="460" y1="20" x2="460" y2="200" stroke="#1e293b" stroke-width="1" />
+					<line x1="40" y1="40" x2="460" y2="40" stroke="#1e293b" stroke-width="1" />
+					<line x1="40" y1="80" x2="460" y2="80" stroke="#1e293b" stroke-width="1" />
+					<line x1="40" y1="120" x2="460" y2="120" stroke="#1e293b" stroke-width="1" />
+					<line x1="40" y1="160" x2="460" y2="160" stroke="#1e293b" stroke-width="1" />
+					<line x1="40" y1="200" x2="460" y2="200" stroke="#1e293b" stroke-width="1" />
+
+					<!-- Y-axis labels -->
+					<text x="4" y="44" fill="#64748b" font-family="ui-monospace, monospace" font-size="10">400</text>
+					<text x="4" y="84" fill="#64748b" font-family="ui-monospace, monospace" font-size="10">300</text>
+					<text x="4" y="124" fill="#64748b" font-family="ui-monospace, monospace" font-size="10">200</text>
+					<text x="4" y="164" fill="#64748b" font-family="ui-monospace, monospace" font-size="10">100</text>
+					<text x="12" y="204" fill="#64748b" font-family="ui-monospace, monospace" font-size="10">0</text>
+
+					<!-- X-axis labels -->
+					<text x="40" y="218" fill="#64748b" font-family="ui-monospace, monospace" font-size="10" text-anchor="middle">00:00</text>
+					<text x="150" y="218" fill="#64748b" font-family="ui-monospace, monospace" font-size="10" text-anchor="middle">06:00</text>
+					<text x="260" y="218" fill="#64748b" font-family="ui-monospace, monospace" font-size="10" text-anchor="middle">12:00</text>
+					<text x="370" y="218" fill="#64748b" font-family="ui-monospace, monospace" font-size="10" text-anchor="middle">18:00</text>
+					<text x="460" y="218" fill="#64748b" font-family="ui-monospace, monospace" font-size="10" text-anchor="middle">24:00</text>
+
+					<!-- Confidence band (blue, 10% opacity) -->
+					<path
+						d="M260 85 L300 78 L340 72 L380 80 L420 75 L460 70
+						   L460 130 L420 120 L380 125 L340 115 L300 122 L260 115 Z"
+						fill="rgb(59 130 246 / 10%)"
+					/>
+
+					<!-- Actual demand line (slate-400) -->
+					<polyline
+						points="40,140 80,125 120,110 150,100 190,90 220,105 260,100 300,95 340,85 380,95 420,90 460,95"
+						stroke="#94a3b8"
+						stroke-width="2"
+						fill="none"
+						stroke-linecap="round"
+						stroke-linejoin="round"
+					/>
+
+					<!-- Predicted demand line (blue-500) -->
+					<polyline
+						points="260,100 300,98 340,90 380,100 420,95 460,92"
+						stroke="#3b82f6"
+						stroke-width="2.5"
+						fill="none"
+						stroke-linecap="round"
+						stroke-linejoin="round"
+					/>
+
+					<!-- Vertical dashed line at split point -->
+					<line x1="260" y1="20" x2="260" y2="200" stroke="#64748b" stroke-width="1" stroke-dasharray="4 4" />
+
+					<!-- Legend -->
+					<line x1="300" y1="235" x2="320" y2="235" stroke="#94a3b8" stroke-width="2" />
+					<text x="324" y="239" fill="#94a3b8" font-family="ui-monospace, monospace" font-size="10">Actual</text>
+					<line x1="380" y1="235" x2="400" y2="235" stroke="#3b82f6" stroke-width="2.5" />
+					<text x="404" y="239" fill="#3b82f6" font-family="ui-monospace, monospace" font-size="10">Predicted</text>
+
+					<!-- "Now" label -->
+					<text x="260" y="14" fill="#64748b" font-family="ui-monospace, monospace" font-size="9" text-anchor="middle">now</text>
+				</svg>
+
+				<!-- Pipeline status bar -->
+				<div
+					class="mt-3 flex items-center gap-2 border-t border-bg-subtle pt-3 font-display text-xs text-text-secondary"
+				>
+					<span class="flex items-center gap-1.5">
+						<span class="inline-block h-2 w-2 rounded-full bg-secondary"></span>
+						Ingest
+					</span>
+					<span class="text-bg-subtle">&rarr;</span>
+					<span class="flex items-center gap-1.5">
+						<span class="inline-block h-2 w-2 rounded-full bg-secondary"></span>
+						Train
+					</span>
+					<span class="text-bg-subtle">&rarr;</span>
+					<span class="flex items-center gap-1.5">
+						<span class="inline-block h-2 w-2 rounded-full bg-primary"></span>
+						Predict
+						<span class="text-primary-hover text-[10px]">live</span>
+					</span>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
