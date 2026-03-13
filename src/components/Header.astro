@@ -1,0 +1,86 @@
+---
+const appUrl = "https://app.gridforesight.com";
+
+const navLinks = [
+	{ label: "How It Works", href: "#how-it-works" },
+	{ label: "Integrations", href: "#integrations" },
+];
+---
+
+<header
+	class="fixed top-0 right-0 left-0 z-50 border-b border-bg-subtle/30 bg-bg-deep/80 backdrop-blur-[12px]"
+>
+	<!-- Checkbox for mobile menu (peer source, before nav and overlay) -->
+	<input type="checkbox" id="menu-toggle" class="peer sr-only" />
+
+	<nav
+		class="mx-auto flex h-14 max-w-[1280px] items-center justify-between px-6 md:h-16 md:px-8"
+		aria-label="Main navigation"
+	>
+		<!-- Logo -->
+		<a href="/" class="font-display text-lg font-bold tracking-tight">
+			<span class="text-text-primary">Grid</span><span class="text-primary"
+				>Foresight</span
+			>
+		</a>
+
+		<!-- Desktop nav -->
+		<ul class="hidden items-center gap-8 md:flex" role="list">
+			{
+				navLinks.map((link) => (
+					<li>
+						<a
+							href={link.href}
+							class="text-sm text-text-secondary transition-colors duration-150 hover:text-text-primary"
+						>
+							{link.label}
+						</a>
+					</li>
+				))
+			}
+		</ul>
+
+		<div class="flex items-center gap-3">
+			<!-- CTA (always visible) -->
+			<a
+				href={appUrl}
+				class="rounded-[--radius-md] bg-primary px-4 py-2 text-sm font-semibold text-text-on-primary transition-all duration-150 hover:scale-[1.02] hover:bg-primary-hover"
+			>
+				Start Forecasting
+			</a>
+
+			<!-- Mobile hamburger label -->
+			<label
+				for="menu-toggle"
+				class="relative z-50 flex cursor-pointer flex-col justify-center gap-[5px] md:hidden"
+				aria-label="Toggle menu"
+			>
+				<span
+					class="hamburger-line block h-[2px] w-5 bg-text-primary transition-all duration-200"
+				></span>
+				<span
+					class="hamburger-line block h-[2px] w-5 bg-text-primary transition-all duration-200"
+				></span>
+				<span
+					class="hamburger-line block h-[2px] w-5 bg-text-primary transition-all duration-200"
+				></span>
+			</label>
+		</div>
+	</nav>
+
+	<!-- Mobile nav overlay (peer-checked from the checkbox) -->
+	<div
+		class="invisible fixed inset-0 top-14 z-40 flex flex-col items-center justify-start gap-6 bg-bg-deep/95 pt-16 opacity-0 backdrop-blur-[12px] transition-all duration-200 peer-checked:visible peer-checked:opacity-100 md:hidden"
+	>
+		{
+			navLinks.map((link) => (
+				<a
+					href={link.href}
+					class="text-lg text-text-secondary transition-colors duration-150 hover:text-text-primary"
+				>
+					{link.label}
+				</a>
+			))
+		}
+	</div>
+</header>
