@@ -1,0 +1,205 @@
+<div
+	aria-hidden="true"
+	class="mockup-hero relative overflow-hidden rounded-xl bg-slate-900 text-slate-100 shadow-2xl"
+>
+	<div class="grid md:grid-cols-[200px_1fr]">
+		<!-- Sidebar (desktop only) -->
+		<aside class="hidden border-r border-slate-800 p-4 md:block">
+			<p class="mb-3 text-[10px] font-medium uppercase tracking-wider text-slate-500">
+				Assets
+			</p>
+			<ul class="flex flex-col gap-1">
+				<li class="flex items-center gap-2 rounded-md border-l-2 border-indigo-500 bg-indigo-500/10 px-3 py-2">
+					<span class="size-1.5 rounded-full bg-emerald-500" />
+					<span class="text-xs text-slate-200">Wind Farm Alpha</span>
+				</li>
+				<li class="flex items-center gap-2 px-3 py-2">
+					<span class="size-1.5 rounded-full bg-emerald-500" />
+					<span class="text-xs text-slate-400">Solar Park Beta</span>
+				</li>
+				<li class="flex items-center gap-2 px-3 py-2">
+					<span class="size-1.5 rounded-full bg-emerald-500" />
+					<span class="text-xs text-slate-400">Grid Node 7</span>
+				</li>
+				<li class="flex items-center gap-2 px-3 py-2">
+					<span class="size-1.5 rounded-full bg-emerald-500" />
+					<span class="text-xs text-slate-400">Battery Storage A</span>
+				</li>
+				<li class="flex items-center gap-2 px-3 py-2">
+					<span class="size-1.5 rounded-full bg-emerald-500" />
+					<span class="text-xs text-slate-400">Hydro Station C</span>
+				</li>
+			</ul>
+		</aside>
+
+		<!-- Main content -->
+		<div class="flex flex-col">
+			<!-- Top bar -->
+			<div class="flex items-center justify-between border-b border-slate-800 px-4 py-3">
+				<span class="text-sm font-semibold text-slate-400">GridForesight</span>
+				<div class="flex items-center gap-3">
+					<div
+						class="flex items-center gap-1 rounded-md bg-slate-800 px-2 py-1 text-[11px] text-slate-300"
+					>
+						Last 30 Days
+						<svg
+							class="size-3 text-slate-400"
+							viewBox="0 0 24 24"
+							fill="none"
+							stroke="currentColor"
+							stroke-width="2"
+							stroke-linecap="round"
+							stroke-linejoin="round"
+						>
+							<path d="m6 9 6 6 6-6" />
+						</svg>
+					</div>
+					<div class="size-7 rounded-full bg-slate-700" />
+				</div>
+			</div>
+
+			<div class="flex flex-col gap-3 p-4">
+				<!-- Metrics row -->
+				<div class="grid grid-cols-1 gap-3 sm:grid-cols-3">
+					<!-- Forecast Accuracy -->
+					<div class="rounded-lg bg-slate-800/50 p-3">
+						<p class="text-[10px] font-medium text-slate-400">Forecast Accuracy</p>
+						<p class="mt-1 text-xl font-bold text-indigo-400">94.2%</p>
+						<p class="mt-0.5 text-[10px] text-slate-500">vs 91.8% baseline</p>
+					</div>
+					<!-- Next 24h Prediction -->
+					<div class="rounded-lg bg-slate-800/50 p-3">
+						<p class="text-[10px] font-medium text-slate-400">Next 24h Prediction</p>
+						<p class="mt-1 text-xl font-bold text-white">847 MW</p>
+						<p class="mt-0.5 text-[10px] text-slate-500">Updated 3 min ago</p>
+					</div>
+					<!-- Data Quality -->
+					<div class="rounded-lg bg-slate-800/50 p-3">
+						<p class="text-[10px] font-medium text-slate-400">Data Quality</p>
+						<div class="mt-2 h-1.5 rounded-full bg-slate-700">
+							<div class="h-full w-[92%] rounded-full bg-emerald-500" />
+						</div>
+						<p class="mt-1 text-[10px] text-slate-500">92% complete</p>
+					</div>
+				</div>
+
+				<!-- Chart area -->
+				<div class="rounded-lg bg-slate-800/30 p-3">
+					<!-- Legend -->
+					<div class="mb-2 flex gap-4 text-[10px] text-slate-400">
+						<span class="flex items-center gap-1.5">
+							<span class="h-0.5 w-3 rounded bg-slate-400" />
+							Actual
+						</span>
+						<span class="flex items-center gap-1.5">
+							<span class="h-0.5 w-3 rounded bg-indigo-500" />
+							Predicted
+						</span>
+					</div>
+
+					<div class="relative">
+						<!-- Y-axis labels -->
+						<div
+							class="absolute top-0 bottom-0 left-0 flex flex-col justify-between pr-1 text-[9px] text-slate-500"
+						>
+							<span>1000</span>
+							<span>750</span>
+							<span>500</span>
+							<span>250</span>
+							<span>0</span>
+						</div>
+
+						<!-- SVG Chart -->
+						<svg
+							viewBox="0 0 500 200"
+							class="ml-7 block w-[calc(100%-1.75rem)]"
+							preserveAspectRatio="xMidYMid meet"
+						>
+							<!-- Grid lines (horizontal) -->
+							<line x1="0" y1="0" x2="500" y2="0" stroke="#1e293b" stroke-width="0.5" />
+							<line x1="0" y1="50" x2="500" y2="50" stroke="#1e293b" stroke-width="0.5" />
+							<line x1="0" y1="100" x2="500" y2="100" stroke="#1e293b" stroke-width="0.5" />
+							<line x1="0" y1="150" x2="500" y2="150" stroke="#1e293b" stroke-width="0.5" />
+							<line x1="0" y1="200" x2="500" y2="200" stroke="#1e293b" stroke-width="0.5" />
+
+							<!-- Grid lines (vertical) -->
+							<line x1="71" y1="0" x2="71" y2="200" stroke="#1e293b" stroke-width="0.5" />
+							<line x1="142" y1="0" x2="142" y2="200" stroke="#1e293b" stroke-width="0.5" />
+							<line x1="214" y1="0" x2="214" y2="200" stroke="#1e293b" stroke-width="0.5" />
+							<line x1="285" y1="0" x2="285" y2="200" stroke="#1e293b" stroke-width="0.5" />
+							<line x1="357" y1="0" x2="357" y2="200" stroke="#1e293b" stroke-width="0.5" />
+							<line x1="428" y1="0" x2="428" y2="200" stroke="#1e293b" stroke-width="0.5" />
+
+							<!-- Prediction shaded area (future zone, Thu onward) -->
+							<polygon
+								points="285,82 357,55 428,42 500,38 500,65 428,68 357,80 285,105"
+								fill="#6366f1"
+								opacity="0.1"
+							/>
+
+							<!-- Actual line (dashed, Mon–Thu) -->
+							<polyline
+								points="0,120 71,92 142,108 214,78 285,88"
+								fill="none"
+								stroke="#94a3b8"
+								stroke-width="1.5"
+								stroke-dasharray="4,3"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+							/>
+
+							<!-- Predicted line (solid, full week) -->
+							<polyline
+								points="0,125 71,98 142,105 214,74 285,82 357,55 428,42 500,38"
+								fill="none"
+								stroke="#6366f1"
+								stroke-width="2"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+							/>
+						</svg>
+
+						<!-- X-axis labels -->
+						<div
+							class="ml-7 mt-1 flex justify-between text-[9px] text-slate-500"
+						>
+							<span>Mon</span>
+							<span>Tue</span>
+							<span>Wed</span>
+							<span>Thu</span>
+							<span>Fri</span>
+							<span>Sat</span>
+							<span>Sun</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Shimmer overlay -->
+	<div class="mockup-shimmer" />
+</div>
+
+<style>
+	.mockup-hero {
+		transform: perspective(1200px) rotateX(2deg);
+	}
+
+	.mockup-shimmer {
+		position: absolute;
+		inset: 0;
+		background: linear-gradient(
+			105deg,
+			transparent 40%,
+			rgba(255, 255, 255, 0.03) 45%,
+			rgba(255, 255, 255, 0.06) 50%,
+			rgba(255, 255, 255, 0.03) 55%,
+			transparent 60%
+		);
+		background-size: 200% 100%;
+		animation: shimmer 2s ease-out forwards;
+		pointer-events: none;
+		border-radius: inherit;
+	}
+</style>

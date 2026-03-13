@@ -1,0 +1,117 @@
+---
+const steps = [
+	{
+		number: "1",
+		title: "Connect your data",
+		description:
+			"Upload CSVs or connect a live data feed. GridForesight auto-detects timestamps, measurements, and metadata.",
+		icon: "database",
+	},
+	{
+		number: "2",
+		title: "Train a model",
+		description:
+			"Pick your target and time range. One click starts automated feature engineering, model training, and cross-validation.",
+		icon: "brain",
+	},
+	{
+		number: "3",
+		title: "Get predictions",
+		description:
+			"View forecasts on your dashboard in real time. Export to CSV, connect downstream systems, or just watch the charts.",
+		icon: "line-chart",
+	},
+];
+---
+
+<section id="how-it-works" class="bg-slate-50 px-6 py-16 md:py-24">
+	<div class="mx-auto max-w-[1280px]">
+		<!-- Section header -->
+		<div class="mx-auto max-w-2xl text-center">
+			<h2 class="font-display text-3xl font-bold text-slate-800 md:text-4xl">
+				From raw data to predictions in three steps
+			</h2>
+		</div>
+
+		<!-- Steps -->
+		<div class="relative mt-16 grid gap-12 md:grid-cols-3 md:gap-8">
+			<!-- Connecting line (desktop) -->
+			<div
+				class="absolute top-6 right-[calc(16.67%+1rem)] left-[calc(16.67%+1rem)] hidden h-0.5 bg-slate-200 md:block"
+				aria-hidden="true"
+			/>
+
+			{
+				steps.map((step) => (
+					<div class="relative flex flex-col items-center text-center">
+						{/* Number circle */}
+						<div class="relative z-10 flex size-12 items-center justify-center rounded-full bg-primary text-lg font-bold text-white">
+							{step.number}
+						</div>
+
+						<h3 class="mt-4 font-display text-xl font-semibold text-slate-800">
+							{step.title}
+						</h3>
+						<p class="mt-2 max-w-xs font-body text-sm leading-relaxed text-slate-500">
+							{step.description}
+						</p>
+
+						{/* Icon */}
+						<div class="mt-4 text-slate-400">
+							{step.icon === "database" && (
+								<svg
+									class="size-5"
+									viewBox="0 0 24 24"
+									fill="none"
+									stroke="currentColor"
+									stroke-width="2"
+									stroke-linecap="round"
+									stroke-linejoin="round"
+								>
+									<ellipse cx="12" cy="5" rx="9" ry="3" />
+									<path d="M3 5v14a9 3 0 0 0 18 0V5" />
+									<path d="M3 12a9 3 0 0 0 18 0" />
+								</svg>
+							)}
+							{step.icon === "brain" && (
+								<svg
+									class="size-5"
+									viewBox="0 0 24 24"
+									fill="none"
+									stroke="currentColor"
+									stroke-width="2"
+									stroke-linecap="round"
+									stroke-linejoin="round"
+								>
+									<path d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z" />
+									<path d="M12 5a3 3 0 1 1 5.997.125 4 4 0 0 1 2.526 5.77 4 4 0 0 1-.556 6.588A4 4 0 1 1 12 18Z" />
+									<path d="M15 13a4.5 4.5 0 0 1-3-4 4.5 4.5 0 0 1-3 4" />
+									<path d="M17.599 6.5a3 3 0 0 0 .399-1.375" />
+									<path d="M6.003 5.125A3 3 0 0 0 6.401 6.5" />
+									<path d="M3.477 10.896a4 4 0 0 1 .585-.396" />
+									<path d="M19.938 10.5a4 4 0 0 1 .585.396" />
+									<path d="M6 18a4 4 0 0 1-1.967-.516" />
+									<path d="M19.967 17.484A4 4 0 0 1 18 18" />
+								</svg>
+							)}
+							{step.icon === "line-chart" && (
+								<svg
+									class="size-5"
+									viewBox="0 0 24 24"
+									fill="none"
+									stroke="currentColor"
+									stroke-width="2"
+									stroke-linecap="round"
+									stroke-linejoin="round"
+								>
+									<path d="M3 3v16a2 2 0 0 0 2 2h16" />
+									<path d="m19 9-5 5-4-4-3 3" />
+								</svg>
+							)}
+						</div>
+					</div>
+				))
+			}
+		</div>
+	</div>
+</section>

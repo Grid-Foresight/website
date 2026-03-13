@@ -1,0 +1,65 @@
+---
+import "@fontsource-variable/plus-jakarta-sans";
+import "@fontsource-variable/dm-sans";
+import "../styles/global.css";
+
+interface Props {
+	title: string;
+	description?: string;
+	canonicalUrl?: string;
+	ogImage?: string;
+}
+
+const {
+	title,
+	description = "See your energy forecasts at a glance. Upload data, train ML models, and get production-ready predictions — no expertise required.",
+	canonicalUrl = Astro.url.href,
+	ogImage = "/og-image.png",
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="description" content={description} />
+		<meta name="generator" content={Astro.generator} />
+
+		<title>{title}</title>
+
+		<!-- Favicons -->
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" href="/favicon.ico" />
+
+		<!-- Canonical -->
+		<link rel="canonical" href={canonicalUrl} />
+		<link rel="sitemap" href="/sitemap-index.xml" />
+
+		<!-- Open Graph -->
+		<meta property="og:type" content="website" />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:url" content={canonicalUrl} />
+		<meta property="og:image" content={new URL(ogImage, Astro.site).href} />
+
+		<!-- Twitter Card -->
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content={title} />
+		<meta name="twitter:description" content={description} />
+		<meta name="twitter:image" content={new URL(ogImage, Astro.site).href} />
+	</head>
+	<body class="font-body bg-white text-slate-700 antialiased">
+		<a
+			href="#main-content"
+			class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:rounded-lg focus:bg-primary focus:px-4 focus:py-2 focus:text-white"
+		>
+			Skip to content
+		</a>
+		<slot name="header" />
+		<main id="main-content">
+			<slot />
+		</main>
+		<slot name="footer" />
+	</body>
+</html>
