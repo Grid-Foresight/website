@@ -1,0 +1,74 @@
+---
+import { ArrowRight, BookOpen, GraduationCap, Microscope } from "@lucide/astro";
+
+const columns = [
+	{
+		Icon: BookOpen,
+		number: "50+",
+		label: "Peer-Reviewed Publications",
+		supporting:
+			"Published in IEEE, Elsevier, and top energy journals. Covering load forecasting, renewable prediction, and grid optimization.",
+		useMono: true,
+	},
+	{
+		Icon: Microscope,
+		number: "10+",
+		label: "Years of Grid Research",
+		supporting:
+			"The Grid Foresight Lab at the University of Calgary has been advancing energy forecasting since 2014. GridForesight is the commercial embodiment of that work.",
+		useMono: true,
+	},
+	{
+		Icon: GraduationCap,
+		number: "UCalgary",
+		label: "Research Partnership",
+		supporting:
+			"Ongoing collaboration with the Schulich School of Engineering ensures GridForesight stays at the frontier of energy forecasting methodology.",
+		useMono: false,
+	},
+];
+---
+
+<section id="research" class="section-reveal bg-bg-light py-20 lg:py-28">
+	<div class="mx-auto max-w-[var(--max-width)] px-6">
+		<div class="mx-auto mb-16 max-w-[640px] text-center">
+			<h2 class="font-display text-[clamp(1.75rem,4vw,3rem)] font-bold text-text-on-light">
+				Built on a Foundation of Published Research
+			</h2>
+			<p class="mt-4 text-lg text-text-on-light-muted">
+				GridForesight's algorithms aren't just tested in production. They're peer-reviewed, published, and
+				validated by the academic community.
+			</p>
+		</div>
+
+		<div class="grid gap-12 md:grid-cols-3">
+			{
+				columns.map((col) => (
+					<div class="flex flex-col items-center text-center">
+						<col.Icon size={32} class="mb-4 text-neutral-500" />
+						<span
+							class:list={[
+								"text-5xl font-bold text-metric lg:text-6xl",
+								col.useMono ? "font-mono tabular-nums" : "font-display",
+							]}
+						>
+							{col.number}
+						</span>
+						<span class="mt-2 text-base font-medium text-text-on-light-muted">{col.label}</span>
+						<p class="mt-4 max-w-xs text-sm leading-relaxed text-text-on-light-muted">{col.supporting}</p>
+					</div>
+				))
+			}
+		</div>
+
+		<div class="mt-16 text-center">
+			<a
+				href="https://gridforesight.ca/"
+				class="inline-flex items-center gap-2 font-display text-base font-semibold text-primary transition-colors hover:text-primary-hover"
+			>
+				Explore the Grid Foresight Lab
+				<ArrowRight size={18} />
+			</a>
+		</div>
+	</div>
+</section>

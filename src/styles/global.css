@@ -1,1 +1,132 @@
 @import "tailwindcss";
+
+@import "@fontsource-variable/manrope";
+@import "@fontsource-variable/inter";
+@import "@fontsource-variable/jetbrains-mono";
+
+/* --- Design Tokens (Tailwind v4 CSS-first) --- */
+@theme {
+	/* Primary accent: gridforesight.ca signature orange-red */
+	--color-primary: #ed4834;
+	--color-primary-hover: #d93c2a;
+
+	/* Secondary accent: electric blue for technical elements */
+	--color-secondary: #3b82f6;
+	--color-secondary-hover: #2563eb;
+
+	/* Metric highlight: amber for large numbers */
+	--color-metric: #f59e0b;
+	--color-metric-warm: #f06d38;
+
+	/* Dark backgrounds (matching gridforesight.ca) */
+	--color-bg-dark: #0f172a;
+	--color-bg-dark-alt: #1a1c20;
+	--color-bg-dark-card: #1e293b;
+
+	/* Light backgrounds */
+	--color-bg-light: #ffffff;
+	--color-bg-light-alt: #f8fafc;
+	--color-bg-light-subtle: #f1f5f9;
+
+	/* Neutral scale */
+	--color-neutral-50: #f8fafc;
+	--color-neutral-100: #f1f5f9;
+	--color-neutral-200: #e2e8f0;
+	--color-neutral-300: #cbd5e1;
+	--color-neutral-400: #94a3b8;
+	--color-neutral-500: #64748b;
+	--color-neutral-600: #475569;
+	--color-neutral-700: #334155;
+	--color-neutral-800: #1e293b;
+	--color-neutral-900: #0f172a;
+	--color-neutral-950: #020617;
+
+	/* Semantic text colors */
+	--color-text-on-dark: #f8fafc;
+	--color-text-on-dark-muted: #94a3b8;
+	--color-text-on-light: #0f172a;
+	--color-text-on-light-muted: #475569;
+
+	/* Success / Error */
+	--color-success: #22c55e;
+	--color-error: #ef4444;
+
+	/* Typography */
+	--font-display: "Manrope Variable", "Manrope", system-ui, sans-serif;
+	--font-body: "Inter Variable", "Inter", system-ui, sans-serif;
+	--font-mono: "JetBrains Mono Variable", "JetBrains Mono", ui-monospace, monospace;
+
+	/* Border radius */
+	--radius-sm: 6px;
+	--radius-md: 8px;
+	--radius-lg: 12px;
+	--radius-full: 9999px;
+
+	/* Layout */
+	--max-width: 1280px;
+	--max-width-narrow: 768px;
+
+	/* Animations */
+	--animate-fade-in-up: fade-in-up 500ms ease-out both;
+}
+
+/* --- Keyframes --- */
+@keyframes fade-in-up {
+	from {
+		opacity: 0;
+		transform: translateY(20px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@keyframes scroll-fade-in {
+	from {
+		opacity: 0;
+		transform: translateY(20px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+/* --- Base --- */
+@layer base {
+	html {
+		font-family: var(--font-body);
+		scroll-behavior: smooth;
+	}
+
+	body {
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+	}
+
+	/* Reduced motion: disable all animations */
+	@media (prefers-reduced-motion: reduce) {
+		html {
+			scroll-behavior: auto;
+		}
+
+		*,
+		*::before,
+		*::after {
+			animation-duration: 0.01ms !important;
+			animation-iteration-count: 1 !important;
+			transition-duration: 0.01ms !important;
+			scroll-behavior: auto !important;
+		}
+	}
+}
+
+/* --- Scroll-triggered section reveal (progressive enhancement) --- */
+@supports (animation-timeline: view()) {
+	.section-reveal {
+		animation: scroll-fade-in linear both;
+		animation-timeline: view();
+		animation-range: entry 0% entry 20%;
+	}
+}
