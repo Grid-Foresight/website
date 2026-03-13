@@ -1,0 +1,103 @@
+---
+import { Image } from "astro:assets";
+import bubbleGFooter from "../assets/images/bubble-G-logo-footer.png";
+
+const appUrl = "https://app.gridforesight.com";
+---
+
+<footer class="bg-neutral-950 py-16 text-neutral-500">
+	<div class="mx-auto max-w-[80rem] px-6">
+		<div class="grid gap-10 md:grid-cols-3 md:gap-8">
+			<!-- Brand -->
+			<div>
+				<Image src={bubbleGFooter} alt="GridForesight" width={120} class="mb-4" />
+				<p class="font-display text-lg font-semibold text-white">GridForesight</p>
+				<p class="mt-1 text-sm text-text-muted">Research-grade energy forecasting</p>
+				<p class="mt-4 text-sm">&copy; 2026 GridForesight. All rights reserved.</p>
+			</div>
+
+			<!-- Platform -->
+			<div>
+				<h3 class="mb-4 text-sm font-semibold uppercase tracking-wide text-white">
+					Platform
+				</h3>
+				<ul class="space-y-3">
+					<li>
+						<a
+							href={appUrl}
+							class="text-sm transition-colors hover:text-primary focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+						>
+							Start Forecasting
+						</a>
+					</li>
+					<li>
+						<a
+							href="#platform"
+							class="text-sm transition-colors hover:text-primary focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+						>
+							Features
+						</a>
+					</li>
+					<li>
+						<a
+							href="#publications"
+							class="text-sm transition-colors hover:text-primary focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+						>
+							Publications
+						</a>
+					</li>
+				</ul>
+			</div>
+
+			<!-- Research -->
+			<div>
+				<h3 class="mb-4 text-sm font-semibold uppercase tracking-wide text-white">
+					Research
+				</h3>
+				<ul class="space-y-3">
+					<li>
+						<a
+							href="https://gridforesight.ca/"
+							target="_blank"
+							rel="noopener noreferrer"
+							class="text-sm transition-colors hover:text-primary focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+						>
+							Grid Foresight Lab
+						</a>
+					</li>
+					<li>
+						<a
+							href="https://ucalgary.ca/"
+							target="_blank"
+							rel="noopener noreferrer"
+							class="text-sm transition-colors hover:text-primary focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+						>
+							University of Calgary
+						</a>
+					</li>
+					<li>
+						<a
+							href="https://schulich.ucalgary.ca/"
+							target="_blank"
+							rel="noopener noreferrer"
+							class="text-sm transition-colors hover:text-primary focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+						>
+							Schulich School of Engineering
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<!-- Bottom bar -->
+		<div class="mt-12 flex flex-col items-center justify-between gap-4 border-t border-neutral-800 pt-8 md:flex-row">
+			<p class="text-sm">GridForesight &mdash; A Grid Foresight Lab venture.</p>
+			<a
+				href="mailto:info@gridforesight.ca"
+				class="text-sm transition-colors hover:text-primary focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+			>
+				info@gridforesight.ca
+			</a>
+		</div>
+	</div>
+</footer>

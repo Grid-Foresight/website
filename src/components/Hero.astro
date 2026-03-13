@@ -1,0 +1,50 @@
+---
+const appUrl = "https://app.gridforesight.com";
+---
+
+<section aria-labelledby="hero-heading" class="relative overflow-hidden bg-bg py-24 md:py-32">
+	<!-- Subtle grid pattern -->
+	<div
+		class="pointer-events-none absolute inset-0"
+		style="background-image: repeating-linear-gradient(0deg, transparent, transparent 39px, rgba(229,229,229,0.3) 39px, rgba(229,229,229,0.3) 40px), repeating-linear-gradient(90deg, transparent, transparent 39px, rgba(229,229,229,0.3) 39px, rgba(229,229,229,0.3) 40px);"
+		aria-hidden="true"
+	></div>
+
+	<div class="relative z-10 mx-auto max-w-3xl px-6 text-center">
+		<p class="mx-auto max-w-2xl text-lg text-text-secondary md:text-xl">
+			Energy forecasting models fail when they're built on heuristics instead of science.
+			Inaccurate predictions cost grid operators millions in over-procurement and under-supply.
+		</p>
+
+		<h1
+			id="hero-heading"
+			class="mt-6 font-display text-4xl font-bold leading-tight tracking-tight text-text md:text-5xl lg:text-6xl"
+		>
+			Research-Grade Forecasting, Production-Ready
+		</h1>
+
+		<p class="mx-auto mt-6 max-w-2xl text-lg text-text-secondary md:text-xl">
+			Built on a decade of peer-reviewed energy systems research at the University of Calgary.
+			Now available as an enterprise forecasting platform.
+		</p>
+
+		<div class="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
+			<a
+				href={appUrl}
+				class="inline-flex min-h-[44px] items-center rounded bg-primary px-8 py-3.5 text-base font-semibold text-white transition-colors hover:bg-accent focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+			>
+				Start Forecasting
+			</a>
+			<a
+				href="#publications"
+				class="inline-flex min-h-[44px] items-center rounded border-2 border-primary px-8 py-3.5 text-base font-semibold text-primary transition-colors hover:bg-primary hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+			>
+				Read Our Research
+			</a>
+		</div>
+
+		<p class="mt-8 text-sm text-text-muted">
+			Born from Grid Foresight Lab &mdash; 10+ years of energy systems research
+		</p>
+	</div>
+</section>

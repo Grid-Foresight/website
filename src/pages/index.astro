@@ -1,23 +1,22 @@
 ---
-import Layout from "../layouts/Layout.astro";
-
-const appUrl = "https://app.gridforesight.com";
+import Features from "../components/Features.astro";
+import FinalCTA from "../components/FinalCTA.astro";
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
+import Hero from "../components/Hero.astro";
+import Origin from "../components/Origin.astro";
+import Publications from "../components/Publications.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
-<Layout title="GridForesight — Energy Forecasting Platform">
-  <main class="flex min-h-screen flex-col items-center justify-center px-6 text-center">
-    <h1 class="text-4xl font-bold tracking-tight sm:text-6xl">
-      GridForesight
-    </h1>
-    <p class="mt-6 max-w-2xl text-lg text-gray-600">
-      ML-powered energy forecasting. Predict demand, optimize operations, and
-      make data-driven decisions for your energy assets.
-    </p>
-    <a
-      href={appUrl}
-      class="mt-10 rounded-lg bg-blue-600 px-8 py-3 text-lg font-semibold text-white transition hover:bg-blue-700"
-    >
-      Go to App
-    </a>
-  </main>
-</Layout>
+<BaseLayout title="GridForesight — Research-Grade Energy Forecasting">
+	<Header />
+	<main id="main-content">
+		<Hero />
+		<Origin />
+		<Features />
+		<Publications />
+		<FinalCTA />
+	</main>
+	<Footer />
+</BaseLayout>

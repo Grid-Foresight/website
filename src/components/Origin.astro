@@ -1,0 +1,96 @@
+---
+import { Image } from "astro:assets";
+import bubbleGFull from "../assets/images/bubble-G-logo-full.png";
+
+const metrics = [
+	{ number: "10+", descriptor: "Years of energy systems research" },
+	{ number: "50+", descriptor: "Peer-reviewed publications" },
+	{ number: "8", descriptor: "PhDs on the research team" },
+	{ number: "3", descriptor: "Patents in forecasting methods" },
+];
+---
+
+<section id="research" aria-labelledby="origin-heading" class="bg-bg-warm py-16 md:py-24">
+	<div class="mx-auto grid max-w-[80rem] items-center gap-12 px-6 md:grid-cols-2 md:gap-16">
+		<!-- Text column -->
+		<div>
+			<span class="text-xs font-semibold uppercase tracking-[0.08em] text-primary">
+				OUR ORIGIN
+			</span>
+			<h2
+				id="origin-heading"
+				class="mt-4 font-display text-3xl font-bold text-text md:text-4xl"
+			>
+				From Lab to Platform
+			</h2>
+			<div class="mt-6 space-y-4 text-base leading-relaxed text-text-secondary">
+				<p>
+					GridForesight began as a research initiative inside Grid Foresight Lab at the
+					University of Calgary's Schulich School of Engineering. For over a decade, our
+					team has published foundational work in energy demand forecasting, smart grid
+					optimization, and battery storage systems.
+				</p>
+				<p>
+					We built GridForesight to bring that research rigor to production. Every algorithm
+					in the platform traces back to peer-reviewed methodology, validated against real
+					grid data.
+				</p>
+				<p>
+					The lab continues to push boundaries. The platform delivers those breakthroughs to
+					your operations.
+				</p>
+				<p class="font-semibold text-text">
+					The same team that publishes the research builds the platform.
+				</p>
+			</div>
+
+			<!-- Metrics strip -->
+			<div class="mt-8 grid grid-cols-2 gap-6 md:grid-cols-4">
+				{
+					metrics.map((metric) => (
+						<div class="text-center">
+							<span class="font-mono text-3xl font-bold text-text">{metric.number}</span>
+							<p class="mt-1 text-sm text-text-secondary">{metric.descriptor}</p>
+						</div>
+					))
+				}
+			</div>
+
+			<div class="mt-6 flex flex-col gap-2 sm:flex-row sm:gap-6">
+				<a
+					href="https://gridforesight.ca/"
+					target="_blank"
+					rel="noopener noreferrer"
+					class="font-semibold text-primary transition-colors hover:text-accent focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+				>
+					Visit Grid Foresight Lab &rarr;
+				</a>
+				<a
+					href="https://gridforesight.ca/"
+					target="_blank"
+					rel="noopener noreferrer"
+					class="font-semibold text-primary transition-colors hover:text-accent focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+				>
+					Meet the full team &rarr;
+				</a>
+			</div>
+		</div>
+
+		<!-- Credential card -->
+		<div class="flex justify-center">
+			<div class="rounded border border-border bg-white p-8 text-center shadow-sm">
+				<Image
+					src={bubbleGFull}
+					alt="Grid Foresight Lab logo"
+					width={280}
+					class="mx-auto"
+				/>
+				<p class="mt-6 font-display text-lg font-semibold text-text">
+					University of Calgary
+				</p>
+				<p class="mt-1 text-sm text-text-secondary">Schulich School of Engineering</p>
+				<p class="mt-3 text-sm font-semibold tracking-wide text-text-muted">Est. 2014</p>
+			</div>
+		</div>
+	</div>
+</section>
