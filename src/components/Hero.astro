@@ -1,0 +1,68 @@
+---
+import { ArrowRight, FlaskConical, ScrollText } from "@lucide/astro";
+
+const appUrl = "https://app.gridforesight.com";
+---
+
+<section class="relative flex min-h-screen items-center justify-center overflow-hidden bg-gradient-to-b from-bg-dark to-bg-dark-alt px-6 pt-20">
+	<!-- Subtle grid pattern overlay -->
+	<svg class="pointer-events-none absolute inset-0 h-full w-full text-neutral-400 opacity-[0.04]" aria-hidden="true">
+		<defs>
+			<pattern id="grid-pattern" width="40" height="40" patternUnits="userSpaceOnUse">
+				<path d="M 40 0 L 0 0 0 40" fill="none" stroke="currentColor" stroke-width="0.5" />
+			</pattern>
+		</defs>
+		<rect width="100%" height="100%" fill="url(#grid-pattern)" />
+	</svg>
+
+	<div class="relative z-10 mx-auto max-w-3xl text-center">
+		<!-- Eyebrow -->
+		<p
+			class="animate-fade-in-up mb-6 inline-flex items-center gap-2 text-sm uppercase tracking-[0.05em] text-text-on-dark-muted [animation-delay:0ms]"
+		>
+			<FlaskConical size={16} />
+			Backed by 10+ Years of University Research
+		</p>
+
+		<!-- Hero metric -->
+		<div class="animate-fade-in-up [animation-delay:0ms]">
+			<span class="block font-display text-[clamp(3.5rem,10vw,8rem)] font-extrabold leading-none text-primary">
+				40%
+			</span>
+		</div>
+
+		<!-- Headline -->
+		<h1 class="animate-fade-in-up mt-2 font-display text-[clamp(2.25rem,5vw,3.5rem)] font-bold text-text-on-dark [animation-delay:150ms]">
+			More Accurate Forecasts
+		</h1>
+
+		<!-- Subheadline -->
+		<p class="animate-fade-in-up mx-auto mt-6 max-w-[640px] text-lg leading-relaxed text-text-on-dark-muted [animation-delay:300ms]">
+			GridForesight turns a decade of peer-reviewed grid research into production ML models that outperform
+			industry-standard forecasting methods.
+		</p>
+
+		<!-- CTA group -->
+		<div class="animate-fade-in-up mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row [animation-delay:450ms]">
+			<a
+				href={appUrl}
+				class="inline-flex items-center gap-2 rounded-full bg-primary px-7 py-3 font-display text-base font-semibold text-white transition-all hover:bg-primary-hover hover:shadow-lg"
+			>
+				Start Forecasting
+				<ArrowRight size={18} />
+			</a>
+			<a
+				href="#research"
+				class="inline-flex items-center gap-2 rounded-full border border-primary px-7 py-3 font-display text-base font-semibold text-primary transition-all hover:bg-primary/10"
+			>
+				<ScrollText size={18} />
+				See the Research
+			</a>
+		</div>
+
+		<!-- Micro social proof -->
+		<p class="animate-fade-in-up mt-8 text-sm text-neutral-500 [animation-delay:450ms]">
+			From the Grid Foresight Lab at the University of Calgary — 1M+ predictions served
+		</p>
+	</div>
+</section>

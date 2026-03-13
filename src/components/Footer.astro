@@ -1,0 +1,107 @@
+---
+import { Image } from "astro:assets";
+import { Linkedin, Mail, MapPin } from "@lucide/astro";
+import footerLogo from "../assets/images/bubble-G-logo-footer.png";
+
+const appUrl = "https://app.gridforesight.com";
+const labUrl = "https://gridforesight.ca/";
+const linkedInUrl = "https://linkedin.com/company/gridforesight";
+---
+
+<footer class="border-t border-neutral-800 bg-bg-dark">
+	<div class="mx-auto max-w-[var(--max-width)] px-6 py-16">
+		<div class="grid gap-12 md:grid-cols-3">
+			<!-- Brand -->
+			<div>
+				<Image src={footerLogo} alt="GridForesight" width={120} height={63} class="h-auto w-[120px]" />
+				<p class="mt-4 max-w-[280px] text-sm leading-relaxed text-neutral-500">
+					ML-powered energy forecasting, proven by university research.
+				</p>
+			</div>
+
+			<!-- Links -->
+			<div class="grid grid-cols-2 gap-8">
+				<div>
+					<h3 class="text-xs font-medium uppercase tracking-[0.05em] text-neutral-500">Platform</h3>
+					<nav class="mt-4 flex flex-col gap-3" aria-label="Platform links">
+						<a
+							href={appUrl}
+							class="text-sm text-neutral-400 transition-colors hover:text-text-on-dark hover:underline"
+						>
+							Start Forecasting
+						</a>
+						<a
+							href="#platform"
+							class="text-sm text-neutral-400 transition-colors hover:text-text-on-dark hover:underline"
+						>
+							Platform Features
+						</a>
+						<a
+							href="#results"
+							class="text-sm text-neutral-400 transition-colors hover:text-text-on-dark hover:underline"
+						>
+							Results
+						</a>
+					</nav>
+				</div>
+				<div>
+					<h3 class="text-xs font-medium uppercase tracking-[0.05em] text-neutral-500">Research</h3>
+					<nav class="mt-4 flex flex-col gap-3" aria-label="Research links">
+						<a
+							href={labUrl}
+							class="text-sm text-neutral-400 transition-colors hover:text-text-on-dark hover:underline"
+						>
+							Grid Foresight Lab
+						</a>
+						<a
+							href={labUrl}
+							class="text-sm text-neutral-400 transition-colors hover:text-text-on-dark hover:underline"
+						>
+							Publications
+						</a>
+					</nav>
+				</div>
+			</div>
+
+			<!-- Contact -->
+			<div>
+				<h3 class="text-xs font-medium uppercase tracking-[0.05em] text-neutral-500">Contact</h3>
+				<div class="mt-4 flex flex-col gap-3">
+					<a
+						href="mailto:info@gridforesight.ca"
+						class="inline-flex items-center gap-2 text-sm text-neutral-400 transition-colors hover:text-text-on-dark hover:underline"
+					>
+						<Mail size={16} />
+						info@gridforesight.ca
+					</a>
+					<p class="inline-flex items-center gap-2 text-sm text-neutral-400">
+						<MapPin size={16} class="shrink-0" />
+						University of Calgary, Calgary, Alberta
+					</p>
+					<a
+						href={linkedInUrl}
+						class="inline-flex items-center gap-2 text-sm text-neutral-400 transition-colors hover:text-text-on-dark hover:underline"
+					>
+						<Linkedin size={16} />
+						LinkedIn
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Bottom bar -->
+	<div class="border-t border-neutral-800">
+		<div class="mx-auto flex max-w-[var(--max-width)] flex-col items-center justify-between gap-4 px-6 py-6 sm:flex-row">
+			<p class="text-xs text-neutral-500">&copy; 2026 GridForesight. All rights reserved.</p>
+			<div class="flex gap-6">
+				<a href="#" class="text-xs text-neutral-500 transition-colors hover:text-neutral-400 hover:underline">
+					Privacy Policy
+				</a>
+				<a href="#" class="text-xs text-neutral-500 transition-colors hover:text-neutral-400 hover:underline">
+					Terms of Service
+				</a>
+			</div>
+		</div>
+	</div>
+</footer>

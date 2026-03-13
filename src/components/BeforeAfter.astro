@@ -1,0 +1,74 @@
+---
+import { Check, CircleCheck, CircleX, X } from "@lucide/astro";
+
+const withoutItems = [
+	"Statistical models plateau at 15-20% error rates",
+	"Manual feature engineering takes weeks per model",
+	"No systematic approach to weather-grid interactions",
+	"Retraining requires data science team intervention",
+	"Forecast degradation goes undetected for months",
+];
+
+const withItems = [
+	"ML models achieve 40% lower forecast error consistently",
+	"Automated pipeline deploys models in hours, not weeks",
+	"Research-proven feature sets capture grid dynamics",
+	"Continuous retraining adapts to seasonal patterns",
+	"Real-time monitoring flags accuracy degradation instantly",
+];
+---
+
+<section class="section-reveal bg-bg-light py-20 lg:py-28">
+	<div class="mx-auto max-w-[var(--max-width)] px-6">
+		<div class="mx-auto mb-12 max-w-[640px] text-center">
+			<h2 class="font-display text-[clamp(1.75rem,4vw,3rem)] font-bold text-text-on-light">
+				The Forecasting Gap
+			</h2>
+			<p class="mt-4 text-lg text-text-on-light-muted">
+				See what changes when peer-reviewed ML models replace legacy forecasting.
+			</p>
+		</div>
+
+		<div class="grid gap-8 md:grid-cols-2">
+			<!-- Without GridForesight -->
+			<div class="rounded-lg border-l-4 border-red-200 bg-bg-light-alt p-8">
+				<div class="mb-6 flex items-center gap-2">
+					<CircleX size={20} class="text-error" />
+					<h3 class="font-display text-lg font-semibold text-error">Without GridForesight</h3>
+				</div>
+				<ul class="flex flex-col gap-4">
+					{
+						withoutItems.map((item) => (
+							<li class="flex items-start gap-3 text-text-on-light-muted">
+								<X size={18} class="mt-0.5 shrink-0 text-error" />
+								<span>{item}</span>
+							</li>
+						))
+					}
+				</ul>
+			</div>
+
+			<!-- With GridForesight -->
+			<div class="rounded-lg border-l-4 border-green-200 bg-bg-light-alt p-8">
+				<div class="mb-6 flex items-center gap-2">
+					<CircleCheck size={20} class="text-success" />
+					<h3 class="font-display text-lg font-semibold text-success">With GridForesight</h3>
+				</div>
+				<ul class="flex flex-col gap-4">
+					{
+						withItems.map((item) => (
+							<li class="flex items-start gap-3 text-text-on-light-muted">
+								<Check size={18} class="mt-0.5 shrink-0 text-success" />
+								<span>{item}</span>
+							</li>
+						))
+					}
+				</ul>
+			</div>
+		</div>
+
+		<p class="mt-10 text-center text-base italic text-text-on-light-muted">
+			The difference? A decade of research, productized.
+		</p>
+	</div>
+</section>

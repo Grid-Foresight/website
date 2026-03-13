@@ -1,0 +1,74 @@
+---
+const metrics = [
+	{ number: "38%", label: "reduction in forecast error" },
+	{ number: "$2.4M", label: "annual savings from reduced imbalance penalties" },
+	{ number: "3 weeks", label: "from data upload to production forecasts" },
+];
+
+const contactEmail = "mailto:info@gridforesight.ca";
+---
+
+<section id="results" class="section-reveal bg-bg-light-alt py-20 lg:py-28">
+	<div class="mx-auto max-w-[var(--max-width)] px-6">
+		<div class="mb-12 text-center">
+			<h2 class="font-display text-[clamp(1.75rem,4vw,3rem)] font-bold text-text-on-light">
+				Results in Production
+			</h2>
+		</div>
+
+		<div class="rounded-lg bg-bg-light p-8 shadow-sm lg:p-12">
+			<span class="text-xs font-medium uppercase tracking-[0.05em] text-neutral-500">Case Study</span>
+
+			<div class="mt-6 grid gap-10 lg:grid-cols-2">
+				<!-- Metrics cluster -->
+				<div>
+					<h3 class="font-display text-lg font-semibold text-text-on-light">
+						Regional Power Cooperative
+					</h3>
+					<p class="mt-1 text-sm text-text-on-light-muted">
+						2.4 GW across 12 generation assets
+					</p>
+
+					<div class="mt-8 flex flex-col gap-6">
+						{
+							metrics.map((m) => (
+								<div>
+									<span class="font-mono text-4xl font-bold tabular-nums text-metric lg:text-5xl">
+										{m.number}
+									</span>
+									<p class="mt-1 text-sm text-text-on-light-muted">{m.label}</p>
+								</div>
+							))
+						}
+					</div>
+				</div>
+
+				<!-- Narrative -->
+				<div class="flex flex-col justify-center">
+					<h3 class="font-display text-xl font-semibold text-text-on-light lg:text-2xl">
+						From Legacy Models to Research-Grade Forecasting
+					</h3>
+					<p class="mt-4 leading-relaxed text-text-on-light-muted">
+						A regional power cooperative managing 2.4 GW of mixed generation was losing $6M+ annually to
+						imbalance penalties driven by inaccurate load and renewable forecasts. After deploying
+						GridForesight's ML pipeline, their forecast error dropped by 38% within the first quarter. The
+						platform's automated retraining adapted to seasonal shifts that had previously required manual
+						model updates every few months.
+					</p>
+					<p class="mt-6 text-sm italic text-neutral-500">
+						&mdash; Operations Director, Regional Power Cooperative
+					</p>
+				</div>
+			</div>
+
+			<div class="mt-10 text-center">
+				<a
+					href={contactEmail}
+					class="inline-flex items-center gap-2 rounded-full bg-primary px-7 py-3 font-display text-base font-semibold text-white transition-all hover:bg-primary-hover hover:shadow-lg"
+				>
+					Talk to Us About Your Portfolio
+				</a>
+			</div>
+		</div>
+	</div>
+</section>
