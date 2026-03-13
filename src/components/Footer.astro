@@ -1,0 +1,62 @@
+---
+import { Image } from "astro:assets";
+import logoFooter from "../assets/images/bubble-G-logo-footer.png";
+
+const labUrl = "https://gridforesight.ca/";
+const appUrl = "https://app.gridforesight.com";
+---
+
+<footer class="bg-[#111] px-6 py-12" aria-label="Site footer">
+	<div class="mx-auto max-w-[var(--width-content)]">
+		<!-- Row 1: Logo + Links -->
+		<div class="flex flex-col items-start justify-between gap-8 sm:flex-row sm:items-center">
+			<a href="/" aria-label="GridForesight home">
+				<Image
+					src={logoFooter}
+					alt=""
+					width={125}
+					height={65}
+					class="h-auto w-[125px]"
+				/>
+			</a>
+
+			<nav class="flex flex-col gap-3" aria-label="Footer navigation">
+				<a
+					href={labUrl}
+					target="_blank"
+					rel="noopener noreferrer"
+					class="font-[var(--font-body)] text-sm text-[var(--color-text-muted-light)] no-underline transition-colors duration-[var(--transition-duration)] hover:underline"
+				>
+					Grid Foresight Lab
+				</a>
+				<a
+					href={appUrl}
+					class="font-[var(--font-body)] text-sm text-[var(--color-text-muted-light)] no-underline transition-colors duration-[var(--transition-duration)] hover:underline"
+				>
+					Start Forecasting
+				</a>
+				<a
+					href="mailto:info@gridforesight.ca"
+					class="font-[var(--font-body)] text-sm text-[var(--color-text-muted-light)] no-underline transition-colors duration-[var(--transition-duration)] hover:underline"
+				>
+					Contact
+				</a>
+			</nav>
+		</div>
+
+		<!-- Row 2: Affiliation -->
+		<p
+			class="mt-8 text-center font-[var(--font-body)] text-[13px] text-[var(--color-text-muted-light)]"
+		>
+			Born from Grid Foresight Lab research at the University of Calgary
+		</p>
+
+		<!-- Row 3: Legal -->
+		<hr class="mt-6 border-[var(--color-border-dark)]" aria-hidden="true" />
+		<p
+			class="mt-6 text-center font-[var(--font-body)] text-[13px] text-[var(--color-text-muted-light)]"
+		>
+			&copy; 2026 GridForesight. All rights reserved.
+		</p>
+	</div>
+</footer>

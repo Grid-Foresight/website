@@ -1,0 +1,65 @@
+---
+import { ExternalLink } from "@lucide/astro";
+
+const appUrl = "https://app.gridforesight.com";
+const labUrl = "https://gridforesight.ca/";
+---
+
+<section
+	class="relative bg-[var(--color-bg-dark)] px-6 py-20 sm:py-32"
+	aria-label="Get started"
+>
+	<!-- Radial gradient atmosphere (mirrors hero) -->
+	<div
+		class="pointer-events-none absolute inset-0"
+		style="background: radial-gradient(ellipse at center, rgba(237, 72, 52, 0.05) 0%, transparent 70%)"
+		aria-hidden="true"
+	></div>
+
+	<div class="relative z-10 mx-auto flex max-w-[640px] flex-col items-center text-center">
+		<p
+			class="animate-on-scroll max-w-[520px] font-[var(--font-body)] text-lg leading-[1.7] text-[var(--color-text-muted-light)]"
+		>
+			When forecasts improve, everything downstream improves. Grid operators make better
+			dispatch decisions. Renewable integration becomes smoother. Costs go down. Reliability
+			goes up.
+		</p>
+
+		<p
+			class="animate-on-scroll stagger-1 mt-8 font-[var(--font-mono)] text-sm uppercase tracking-[0.1em] text-[var(--color-accent)]"
+		>
+			From lab to production
+		</p>
+
+		<h2
+			class="animate-on-scroll stagger-2 mt-4 font-[var(--font-display)] text-[28px] font-semibold leading-[1.15] tracking-[-0.015em] text-[var(--color-text-light)] sm:text-4xl"
+		>
+			Start forecasting with a decade of research behind you
+		</h2>
+
+		<p
+			class="animate-on-scroll stagger-3 mt-6 max-w-[520px] font-[var(--font-body)] text-lg text-[var(--color-text-muted-light)]"
+		>
+			GridForesight brings Grid Foresight Lab's published research to your grid. No ML expertise
+			required.
+		</p>
+
+		<div class="animate-on-scroll stagger-4 mt-10 flex flex-col items-center gap-4">
+			<a
+				href={appUrl}
+				class="rounded-[var(--radius-button)] bg-[var(--color-accent)] px-7 py-3.5 font-[var(--font-body)] text-base font-semibold text-white transition-colors duration-[var(--transition-duration)] hover:bg-[var(--color-accent-hover)]"
+			>
+				Start Forecasting
+			</a>
+			<a
+				href={labUrl}
+				target="_blank"
+				rel="noopener noreferrer"
+				class="group flex items-center gap-1.5 font-[var(--font-body)] text-base text-[var(--color-text-muted-light)] transition-colors duration-[var(--transition-duration)] hover:underline"
+			>
+				Visit Grid Foresight Lab
+				<ExternalLink class="size-4" aria-hidden="true" />
+			</a>
+		</div>
+	</div>
+</section>

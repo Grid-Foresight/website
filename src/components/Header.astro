@@ -1,0 +1,53 @@
+---
+import { Image } from "astro:assets";
+import logoSmall from "../assets/images/bubble-G-small.png";
+
+const appUrl = "https://app.gridforesight.com";
+---
+
+<header
+	id="site-header"
+	class="fixed top-0 right-0 left-0 z-50 h-16 transition-colors duration-300"
+>
+	<nav
+		class="mx-auto flex h-full max-w-[var(--width-page)] items-center justify-between px-6"
+		aria-label="Main navigation"
+	>
+		<a href="/" class="flex items-center gap-2" aria-label="GridForesight home">
+			<Image
+				src={logoSmall}
+				alt=""
+				width={36}
+				height={36}
+				class="size-9"
+			/>
+			<span
+				class="hidden font-[var(--font-body)] text-base font-semibold text-[var(--color-text-light)] min-[480px]:inline"
+			>
+				GridForesight
+			</span>
+		</a>
+
+		<a
+			href={appUrl}
+			class="rounded-[var(--radius-button)] bg-[var(--color-accent)] px-5 py-2.5 font-[var(--font-body)] text-sm font-semibold text-white transition-colors duration-[var(--transition-duration)] hover:bg-[var(--color-accent-hover)]"
+		>
+			Start Forecasting
+		</a>
+	</nav>
+</header>
+
+<script>
+	const header = document.getElementById("site-header");
+	if (header) {
+		const updateHeader = () => {
+			if (window.scrollY > 20) {
+				header.classList.add("is-scrolled");
+			} else {
+				header.classList.remove("is-scrolled");
+			}
+		};
+		window.addEventListener("scroll", updateHeader, { passive: true });
+		updateHeader();
+	}
+</script>

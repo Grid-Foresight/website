@@ -18,6 +18,12 @@
 			}
 		}
 	},
+	"css": {
+		"parser": {
+			"cssModules": false,
+			"tailwindDirectives": true
+		}
+	},
 	"files": {
 		"includes": ["src/**", "astro.config.mjs", "package.json", "tsconfig.json"]
 	},
