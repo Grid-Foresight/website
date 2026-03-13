@@ -1,0 +1,86 @@
+---
+interface Props {
+	year: string;
+	title: string;
+	detail: string;
+	index: number;
+}
+
+const { year, title, detail, index } = Astro.props;
+const isEven = index % 2 === 0;
+---
+
+<div
+	class="animate-on-scroll relative grid gap-4 pb-12 md:grid-cols-[1fr_auto_1fr] md:gap-0 md:pb-16"
+	style={`transition-delay: ${index * 100}ms`}
+>
+	<!-- Left column -->
+	<div
+		class:list={[
+			"hidden md:block",
+			isEven ? "pr-10 text-right" : "",
+		]}
+	>
+		<div class:list={[isEven ? "block" : "hidden"]}>
+			<p class="font-[var(--font-mono)] text-sm font-bold text-[var(--color-accent-warm)]">
+				{year}
+			</p>
+			<p class="mt-1 font-[var(--font-body)] text-lg font-semibold text-[var(--color-text-dark)]">
+				{title}
+			</p>
+			<p class="mt-1 font-[var(--font-body)] text-base text-[var(--color-text-muted-dark)]">
+				{detail}
+			</p>
+		</div>
+	</div>
+
+	<!-- Center line + dot -->
+	<div class="relative flex flex-col items-center">
+		<div
+			class="size-3 shrink-0 rounded-full bg-[var(--color-accent-warm)]"
+			aria-hidden="true"
+		></div>
+		<div class="w-0.5 grow bg-[var(--color-border-light)]" aria-hidden="true"></div>
+		<!-- Horizontal connector (desktop) -->
+		<div
+			class:list={[
+				"absolute top-1.5 hidden h-0.5 w-5 bg-[var(--color-border-light)] md:block",
+				isEven ? "right-full" : "left-full",
+			]}
+			aria-hidden="true"
+		></div>
+	</div>
+
+	<!-- Right column -->
+	<div
+		class:list={[
+			"hidden md:block",
+			!isEven ? "pl-10" : "",
+		]}
+	>
+		<div class:list={[!isEven ? "block" : "hidden"]}>
+			<p class="font-[var(--font-mono)] text-sm font-bold text-[var(--color-accent-warm)]">
+				{year}
+			</p>
+			<p class="mt-1 font-[var(--font-body)] text-lg font-semibold text-[var(--color-text-dark)]">
+				{title}
+			</p>
+			<p class="mt-1 font-[var(--font-body)] text-base text-[var(--color-text-muted-dark)]">
+				{detail}
+			</p>
+		</div>
+	</div>
+
+	<!-- Mobile layout (line on left) -->
+	<div class="pl-6 md:hidden">
+		<p class="font-[var(--font-mono)] text-sm font-bold text-[var(--color-accent-warm)]">
+			{year}
+		</p>
+		<p class="mt-1 font-[var(--font-body)] text-lg font-semibold text-[var(--color-text-dark)]">
+			{title}
+		</p>
+		<p class="mt-1 font-[var(--font-body)] text-base text-[var(--color-text-muted-dark)]">
+			{detail}
+		</p>
+	</div>
+</div>

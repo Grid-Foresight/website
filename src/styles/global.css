@@ -1,1 +1,168 @@
 @import "tailwindcss";
+
+@import "@fontsource-variable/fraunces";
+@import "@fontsource-variable/dm-sans";
+@import "@fontsource-variable/jetbrains-mono";
+
+@theme {
+	/* Colors */
+	--color-bg-dark: #1a1c20;
+	--color-bg-light: #fafaf9;
+	--color-bg-mid: #f5f5f4;
+	--color-text-dark: #1c1917;
+	--color-text-light: #fafaf9;
+	--color-text-muted-dark: #78716c;
+	--color-text-muted-light: #a8a29e;
+	--color-accent: #ed4834;
+	--color-accent-hover: #dc2626;
+	--color-accent-warm: #f59e0b;
+	--color-border-dark: #292524;
+	--color-border-light: #e7e5e4;
+
+	/* Typography */
+	--font-display: "Fraunces Variable", "Georgia", serif;
+	--font-body: "DM Sans Variable", "Helvetica Neue", sans-serif;
+	--font-mono: "JetBrains Mono Variable", "Fira Code", monospace;
+
+	/* Spacing */
+	--spacing-section-y: 96px;
+	--spacing-section-y-mobile: 64px;
+	--width-content: 960px;
+	--width-page: 1280px;
+	--width-paragraph: 680px;
+	--spacing-gap: 24px;
+
+	/* Shape */
+	--radius-card: 6px;
+	--radius-button: 6px;
+	--radius-image: 4px;
+	--transition-duration: 300ms;
+	--transition-easing: cubic-bezier(0.4, 0, 0.2, 1);
+	--scroll-duration: 600ms;
+	--scroll-easing: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Base */
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	font-family: var(--font-body);
+	color: var(--color-text-dark);
+	background-color: var(--color-bg-dark);
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+/* Scroll animation */
+.animate-on-scroll {
+	opacity: 0;
+	transform: translateY(20px);
+	transition:
+		opacity var(--scroll-duration) var(--scroll-easing),
+		transform var(--scroll-duration) var(--scroll-easing);
+}
+
+.animate-on-scroll.is-visible {
+	opacity: 1;
+	transform: translateY(0);
+}
+
+/* Stagger delays */
+.stagger-1 {
+	transition-delay: 100ms;
+}
+.stagger-2 {
+	transition-delay: 200ms;
+}
+.stagger-3 {
+	transition-delay: 300ms;
+}
+.stagger-4 {
+	transition-delay: 400ms;
+}
+.stagger-5 {
+	transition-delay: 500ms;
+}
+
+/* Hero stagger (uses animation for load, not scroll) */
+@keyframes fade-in-up {
+	from {
+		opacity: 0;
+		transform: translateY(20px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+.hero-animate {
+	opacity: 0;
+	animation: fade-in-up var(--scroll-duration) var(--scroll-easing) forwards;
+}
+
+.hero-delay-0 {
+	animation-delay: 0ms;
+}
+.hero-delay-1 {
+	animation-delay: 150ms;
+}
+.hero-delay-2 {
+	animation-delay: 300ms;
+}
+.hero-delay-3 {
+	animation-delay: 450ms;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+	html {
+		scroll-behavior: auto;
+	}
+
+	.animate-on-scroll {
+		opacity: 1;
+		transform: none;
+		transition: none;
+	}
+
+	.hero-animate {
+		opacity: 1;
+		transform: none;
+		animation: none;
+	}
+}
+
+/* Header scroll state */
+#site-header.is-scrolled {
+	background-color: var(--color-bg-dark);
+	backdrop-filter: blur(8px);
+}
+
+/* Focus ring */
+:focus-visible {
+	outline: 2px solid var(--color-accent);
+	outline-offset: 2px;
+}
+
+/* Skip to content */
+.skip-to-content {
+	position: absolute;
+	left: -9999px;
+	top: 0;
+	z-index: 100;
+	padding: 8px 16px;
+	background: var(--color-accent);
+	color: white;
+	font-family: var(--font-body);
+	font-size: 14px;
+	font-weight: 600;
+	text-decoration: none;
+}
+
+.skip-to-content:focus {
+	left: 8px;
+	top: 8px;
+}

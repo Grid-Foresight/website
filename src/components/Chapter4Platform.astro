@@ -1,0 +1,108 @@
+---
+import { Activity, ArrowRightLeft, Clock, CloudSun, Cpu, TrendingUp, Upload } from "@lucide/astro";
+import ChapterLabel from "./ChapterLabel.astro";
+import FeatureCard from "./FeatureCard.astro";
+
+const appUrl = "https://app.gridforesight.com";
+---
+
+<section
+	class="px-6 py-16 sm:py-[var(--spacing-section-y)]"
+	style="background: linear-gradient(to bottom, var(--color-bg-light) 60%, var(--color-bg-dark) 100%)"
+	aria-labelledby="the-platform-title"
+>
+	<div class="mx-auto max-w-[var(--width-content)]">
+		<ChapterLabel title="The Platform" id="the-platform-title" />
+
+		<p
+			class="animate-on-scroll stagger-1 max-w-[var(--width-paragraph)] font-[var(--font-body)] text-lg leading-[1.7] text-[var(--color-text-dark)]"
+		>
+			Accurate models are useless if they're locked inside a research lab. GridForesight takes a
+			decade of published research and packages it into a platform that any energy operator can
+			use — no ML expertise required.
+		</p>
+
+		<!-- Feature grid -->
+		<div class="mt-12 grid gap-6 md:grid-cols-2">
+			<FeatureCard
+				title="Upload your data"
+				description="Import historical load, weather, and generation data in any standard format. Automatic validation and cleaning."
+			>
+				<Upload slot="icon" class="size-8" aria-hidden="true" />
+			</FeatureCard>
+
+			<FeatureCard
+				title="Train custom models"
+				description="One-click model training optimized for your grid. No hyperparameter tuning, no ML knowledge needed."
+			>
+				<Cpu slot="icon" class="size-8" aria-hidden="true" />
+			</FeatureCard>
+
+			<FeatureCard
+				title="Generate forecasts"
+				description="Day-ahead, week-ahead, and intra-day forecasts with confidence intervals and explainability."
+			>
+				<TrendingUp slot="icon" class="size-8" aria-hidden="true" />
+			</FeatureCard>
+
+			<FeatureCard
+				title="Monitor accuracy"
+				description="Real-time accuracy tracking, drift detection, and automatic model retraining recommendations."
+			>
+				<Activity slot="icon" class="size-8" aria-hidden="true" />
+			</FeatureCard>
+		</div>
+
+		<!-- Tagline -->
+		<p
+			class="animate-on-scroll mt-10 font-[var(--font-display)] text-lg italic text-[var(--color-text-muted-dark)]"
+		>
+			From raw data to forecast in minutes
+		</p>
+
+		<!-- Research-backed capabilities -->
+		<div class="mt-16">
+			<h3
+				class="animate-on-scroll font-[var(--font-body)] text-sm font-semibold uppercase tracking-[0.1em] text-[var(--color-text-muted-dark)]"
+			>
+				Research-backed capabilities
+			</h3>
+
+			<div class="mt-6 grid gap-6 md:grid-cols-3">
+				<FeatureCard
+					title="Multi-horizon forecasting"
+					description="From 15-minute intervals to 7-day outlooks, using a single unified model architecture"
+				>
+					<Clock slot="icon" class="size-8" aria-hidden="true" />
+				</FeatureCard>
+
+				<FeatureCard
+					title="Weather-aware models"
+					description="Real-time weather integration that adapts to sudden forecast changes and extreme events"
+				>
+					<CloudSun slot="icon" class="size-8" aria-hidden="true" />
+				</FeatureCard>
+
+				<FeatureCard
+					title="Transfer learning"
+					description="Models pre-trained on diverse grid data transfer to new regions with minimal fine-tuning"
+				>
+					<ArrowRightLeft slot="icon" class="size-8" aria-hidden="true" />
+				</FeatureCard>
+			</div>
+		</div>
+
+		<!-- Mid-page CTA -->
+		<div class="animate-on-scroll mt-16 flex flex-col items-center gap-3 pb-16 text-center sm:pb-[var(--spacing-section-y)]">
+			<a
+				href={appUrl}
+				class="rounded-[var(--radius-button)] bg-[var(--color-accent)] px-7 py-3 font-[var(--font-body)] text-base font-semibold text-white transition-colors duration-[var(--transition-duration)] hover:bg-[var(--color-accent-hover)]"
+			>
+				Start Forecasting
+			</a>
+			<p class="font-[var(--font-body)] text-sm text-[var(--color-text-muted-dark)]">
+				No ML expertise required
+			</p>
+		</div>
+	</div>
+</section>

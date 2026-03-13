@@ -1,0 +1,92 @@
+---
+import ChapterLabel from "./ChapterLabel.astro";
+---
+
+<section
+	id="the-problem"
+	class="bg-[var(--color-bg-dark)] px-6 py-16 sm:py-[var(--spacing-section-y)]"
+	aria-labelledby="the-problem-title"
+>
+	<div class="mx-auto max-w-[var(--width-content)]">
+		<!-- Separator -->
+		<hr class="mb-16 border-[var(--color-border-dark)] sm:mb-24" aria-hidden="true" />
+
+		<ChapterLabel title="The Problem" dark id="the-problem-title" />
+
+		<p
+			class="animate-on-scroll stagger-1 max-w-[var(--width-paragraph)] font-[var(--font-body)] text-lg leading-[1.7] text-[var(--color-text-light)]"
+		>
+			The energy grid is undergoing the most dramatic transformation since electrification.
+			Renewables, electric vehicles, distributed generation, and extreme weather are reshaping
+			demand patterns faster than traditional forecasting methods can follow.
+		</p>
+
+		<p
+			class="animate-on-scroll stagger-2 mt-6 max-w-[var(--width-paragraph)] font-[var(--font-body)] text-lg leading-[1.7] text-[var(--color-text-muted-light)]"
+		>
+			Legacy statistical models were built for a predictable grid. They assume stable demand
+			curves, seasonal patterns, and incremental change. But the grid of 2026 doesn't work that
+			way. Forecast errors cascade into grid instability, wasted capacity, and billions in
+			economic loss.
+		</p>
+
+		<!-- Pull quote -->
+		<blockquote
+			class="animate-on-scroll stagger-3 mt-12 max-w-[640px] border-l-[3px] border-[var(--color-accent)] py-2 pl-6"
+		>
+			<p
+				class="font-[var(--font-display)] text-xl italic leading-[1.4] text-[var(--color-accent)] sm:text-[28px]"
+			>
+				Forecast errors don't just cost money — they destabilize the infrastructure that modern
+				life depends on.
+			</p>
+		</blockquote>
+
+		<!-- Accuracy comparison (dark variant) -->
+		<div class="animate-on-scroll mt-12">
+			<div class="grid gap-6 md:grid-cols-2">
+				<!-- Traditional methods -->
+				<div class="rounded-[var(--radius-card)] border border-[var(--color-border-dark)] p-6">
+					<p
+						class="font-[var(--font-body)] text-sm font-medium uppercase tracking-[0.05em] text-[var(--color-text-muted-light)]"
+					>
+						Traditional Statistical Methods
+					</p>
+					<p
+						class="mt-3 font-[var(--font-mono)] text-[32px] font-bold leading-[1.1] tracking-[-0.02em] text-[var(--color-text-light)] sm:text-[48px]"
+					>
+						MAPE: 4.2%
+					</p>
+					<p class="mt-2 font-[var(--font-body)] text-sm text-[var(--color-text-muted-light)]">
+						Industry baseline (ARIMA, exponential smoothing)
+					</p>
+				</div>
+
+				<!-- GridForesight ML -->
+				<div
+					class="rounded-[var(--radius-card)] border border-[var(--color-border-dark)] border-l-[3px] border-l-[var(--color-accent)] p-6 shadow-lg shadow-black/20"
+				>
+					<p
+						class="font-[var(--font-body)] text-sm font-medium uppercase tracking-[0.05em] text-[var(--color-text-muted-light)]"
+					>
+						GridForesight ML Models
+					</p>
+					<p
+						class="mt-3 font-[var(--font-mono)] text-[32px] font-bold leading-[1.1] tracking-[-0.02em] text-[var(--color-text-light)] sm:text-[48px]"
+					>
+						MAPE: 2.1%
+					</p>
+					<p class="mt-2 font-[var(--font-body)] text-sm text-[var(--color-text-muted-light)]">
+						Trained on Grid Foresight Lab research
+					</p>
+				</div>
+			</div>
+
+			<p
+				class="mt-6 font-[var(--font-body)] text-base font-semibold text-[var(--color-accent)]"
+			>
+				50% reduction in forecast error, validated on real grid data
+			</p>
+		</div>
+	</div>
+</section>

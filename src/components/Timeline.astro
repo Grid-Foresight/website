@@ -1,0 +1,38 @@
+---
+import TimelineItem from "./TimelineItem.astro";
+
+const milestones = [
+	{
+		year: "2012",
+		title: "Research begins",
+		detail: "First smart grid forecasting models developed at the University of Calgary",
+	},
+	{
+		year: "2020",
+		title: "Real-world validation",
+		detail:
+			"Models trained on Alberta grid data achieve significant accuracy improvements in day-ahead forecasting",
+	},
+	{
+		year: "2022",
+		title: "Platform vision",
+		detail:
+			"Research findings are compelling enough to warrant a production platform — GridForesight is conceived",
+	},
+	{
+		year: "2024",
+		title: "GridForesight launches",
+		detail: "The platform goes live, making a decade of research accessible to any energy operator",
+	},
+];
+---
+
+<div class="relative mt-12">
+	<!-- Mobile: line on the left -->
+	<div
+		class="absolute top-0 bottom-0 left-1.5 w-0.5 bg-[var(--color-border-light)] md:left-1/2 md:-translate-x-px"
+		aria-hidden="true"
+	></div>
+
+	{milestones.map((m, i) => <TimelineItem {...m} index={i} />)}
+</div>

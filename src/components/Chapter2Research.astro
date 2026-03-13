@@ -1,0 +1,37 @@
+---
+import ChapterLabel from "./ChapterLabel.astro";
+import Timeline from "./Timeline.astro";
+---
+
+<section
+	class="bg-[var(--color-bg-light)] px-6 py-16 sm:py-[var(--spacing-section-y)]"
+	aria-labelledby="the-research-title"
+>
+	<div class="mx-auto max-w-[var(--width-content)]">
+		<p
+			class="animate-on-scroll mb-4 font-[var(--font-mono)] text-xs tracking-[0.1em] text-[var(--color-text-muted-dark)]"
+		>
+			10+ years of research &middot; 200+ published papers
+		</p>
+
+		<ChapterLabel title="The Research" id="the-research-title" />
+
+		<p
+			class="animate-on-scroll stagger-1 max-w-[var(--width-paragraph)] font-[var(--font-body)] text-lg leading-[1.7] text-[var(--color-text-dark)]"
+		>
+			Grid Foresight Lab began at the University of Calgary with a simple question: can machine
+			learning forecast energy demand better than the methods the industry has relied on for
+			decades?
+		</p>
+
+		<p
+			class="animate-on-scroll stagger-2 mt-6 max-w-[var(--width-paragraph)] font-[var(--font-body)] text-lg leading-[1.7] text-[var(--color-text-muted-dark)]"
+		>
+			Under the leadership of Dr. Hamidreza Zareipour, a team of researchers spent over a
+			decade answering that question. They published hundreds of papers, trained thousands of
+			models, and tested their methods against real-world grid data.
+		</p>
+
+		<Timeline />
+	</div>
+</section>

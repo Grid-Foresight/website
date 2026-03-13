@@ -1,0 +1,55 @@
+---
+import { ChevronDown } from "@lucide/astro";
+
+const appUrl = "https://app.gridforesight.com";
+---
+
+<section
+	class="relative flex min-h-[calc(100svh-64px)] items-center justify-center bg-[var(--color-bg-dark)] px-6"
+	aria-label="Hero"
+>
+	<!-- Radial gradient atmosphere -->
+	<div
+		class="pointer-events-none absolute inset-0"
+		style="background: radial-gradient(ellipse at center, rgba(237, 72, 52, 0.05) 0%, transparent 70%)"
+		aria-hidden="true"
+	></div>
+
+	<div class="relative z-10 flex max-w-[560px] flex-col items-center text-center">
+		<p
+			class="hero-animate hero-delay-0 font-[var(--font-body)] text-sm uppercase tracking-[0.1em] text-[var(--color-text-muted-light)]"
+		>
+			From Grid Foresight Lab, University of Calgary
+		</p>
+
+		<h1
+			class="hero-animate hero-delay-1 mt-6 font-[var(--font-display)] text-4xl font-bold leading-[1.1] tracking-[-0.02em] text-[var(--color-text-light)] sm:text-[56px]"
+		>
+			Tomorrow's Grid, Today
+		</h1>
+
+		<p
+			class="hero-animate hero-delay-2 mt-6 font-[var(--font-body)] text-lg text-[var(--color-text-muted-light)] sm:text-xl"
+		>
+			A decade of energy research, distilled into one forecasting platform.
+		</p>
+
+		<div
+			class="hero-animate hero-delay-3 mt-10 flex w-full flex-col items-center gap-4 sm:flex-row sm:justify-center"
+		>
+			<a
+				href={appUrl}
+				class="rounded-[var(--radius-button)] bg-[var(--color-accent)] px-7 py-3 font-[var(--font-body)] text-base font-semibold text-white transition-colors duration-[var(--transition-duration)] hover:bg-[var(--color-accent-hover)]"
+			>
+				Start Your Forecast
+			</a>
+			<a
+				href="#the-problem"
+				class="flex items-center gap-2 rounded-[var(--radius-button)] border border-[var(--color-text-muted-light)] px-7 py-3 font-[var(--font-body)] text-base font-semibold text-[var(--color-text-light)] transition-colors duration-[var(--transition-duration)] hover:border-[var(--color-text-light)]"
+			>
+				Read the story
+				<ChevronDown class="size-5" aria-hidden="true" />
+			</a>
+		</div>
+	</div>
+</section>
