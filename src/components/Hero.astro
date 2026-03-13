@@ -1,0 +1,41 @@
+---
+import DashboardMockup from "./DashboardMockup.astro";
+
+const appUrl = "https://app.gridforesight.com";
+---
+
+<section class="px-6 pt-16 pb-12 md:pt-24 md:pb-20">
+	<div class="mx-auto max-w-[1280px]">
+		<!-- Text block -->
+		<div class="mx-auto max-w-[720px] text-center" style="animation: fade-in-up 0.6s ease-out">
+			<h1
+				class="font-display text-4xl font-extrabold leading-[1.1] tracking-[-0.02em] text-slate-800 md:text-[56px]"
+			>
+				See your energy forecasts at a glance
+			</h1>
+			<p class="mx-auto mt-6 max-w-[560px] font-body text-base leading-relaxed text-slate-500 md:text-lg">
+				Upload your data, train a model, and get production-ready predictions — no ML expertise
+				required.
+			</p>
+
+			<!-- CTA -->
+			<div class="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
+				<a
+					href={appUrl}
+					class="rounded-lg bg-primary px-6 py-3 font-body text-base font-semibold text-white transition-colors hover:bg-primary-hover"
+					rel="noopener noreferrer"
+				>
+					Start Forecasting
+				</a>
+			</div>
+			<p class="mt-4 font-body text-sm text-slate-500">
+				Setup in under 5 minutes. No credit card required.
+			</p>
+		</div>
+
+		<!-- Dashboard mockup -->
+		<div class="mx-auto mt-12 max-w-[1100px] md:mt-16" style="animation: fade-in-up 0.8s ease-out 0.2s both">
+			<DashboardMockup />
+		</div>
+	</div>
+</section>

@@ -1,0 +1,71 @@
+---
+import FeaturePreview from "./FeaturePreview.astro";
+
+const features = [
+	{
+		title: "Forecasts you can actually read",
+		description:
+			"Every prediction displayed as an interactive chart with confidence intervals, actual-vs-predicted overlays, and exportable data. No spreadsheet archaeology required.",
+		preview: "chart" as const,
+		reversed: false,
+	},
+	{
+		title: "Upload data in seconds",
+		description:
+			"Drag your CSV or connect to an API. GridForesight validates, cleans, and maps your time series automatically. Bad data gets flagged before it reaches a model.",
+		preview: "upload" as const,
+		reversed: true,
+	},
+	{
+		title: "Train models without writing code",
+		description:
+			"Select your target variable, pick a training window, and hit train. GridForesight handles feature engineering, model selection, and validation automatically.",
+		preview: "training" as const,
+		reversed: false,
+	},
+];
+---
+
+<section id="features" class="bg-white px-6 py-16 md:py-24">
+	<div class="mx-auto max-w-[1280px]">
+		<!-- Section header -->
+		<div class="mx-auto max-w-2xl text-center">
+			<p
+				class="font-body text-sm font-medium uppercase tracking-[0.05em] text-slate-400"
+			>
+				For grid operators, portfolio managers, and traders
+			</p>
+			<h2 class="mt-3 font-display text-3xl font-bold text-slate-800 md:text-4xl">
+				Everything you need to forecast with confidence
+			</h2>
+		</div>
+
+		<!-- Feature rows -->
+		<div class="mt-16 flex flex-col gap-20">
+			{
+				features.map((feature) => (
+					<div
+						class:list={[
+							"grid items-center gap-8 md:grid-cols-2 md:gap-16",
+						]}
+					>
+						{/* Text */}
+						<div class:list={[feature.reversed && "md:order-2"]}>
+							<h3 class="font-display text-2xl font-semibold text-slate-800">
+								{feature.title}
+							</h3>
+							<p class="mt-3 font-body text-base leading-relaxed text-slate-500">
+								{feature.description}
+							</p>
+						</div>
+
+						{/* Preview */}
+						<div class:list={[feature.reversed && "md:order-1"]}>
+							<FeaturePreview variant={feature.preview} />
+						</div>
+					</div>
+				))
+			}
+		</div>
+	</div>
+</section>
