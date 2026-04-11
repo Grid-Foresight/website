@@ -1,5 +1,8 @@
 ---
-const appUrl = "https://app.gridforesight.com";
+import { config } from "../config";
+
+const { appUrl } = config.site;
+const { heading, description, button } = config.cta;
 ---
 
 <section aria-labelledby="cta-heading" class="bg-white py-20 md:py-32">
@@ -8,12 +11,9 @@ const appUrl = "https://app.gridforesight.com";
 			id="cta-heading"
 			class="font-display text-3xl font-semibold tracking-tight text-slate-900 md:text-[40px]"
 		>
-			Ready to forecast with confidence?
+			{heading}
 		</h2>
-		<p class="mx-auto mt-4 max-w-[680px] text-lg text-slate-600">
-			Join the energy operators already using GridForesight to make faster, more accurate
-			decisions.
-		</p>
+		<p class="mx-auto mt-4 max-w-[680px] text-lg text-slate-600">{description}</p>
 
 		<div class="mt-10 flex items-center justify-center">
 			<a
@@ -22,7 +22,7 @@ const appUrl = "https://app.gridforesight.com";
 				target="_blank"
 				rel="noopener noreferrer"
 			>
-				Start Forecasting
+				{button}
 			</a>
 		</div>
 	</div>

@@ -1,13 +1,10 @@
 ---
+import { config } from "../config";
 import Menu from "./icons/Menu.astro";
 import X from "./icons/X.astro";
 
-const navLinks = [
-	{ label: "Features", href: "#features" },
-	{ label: "How It Works", href: "#how-it-works" },
-];
-
-const appUrl = "https://app.gridforesight.com";
+const { appUrl } = config.site;
+const navLinks = config.nav;
 ---
 
 <div id="scroll-sentinel" class="absolute top-0 h-1" aria-hidden="true"></div>

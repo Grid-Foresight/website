@@ -1,39 +1,11 @@
 ---
+import { config } from "../config";
 import BrainCircuit from "./icons/BrainCircuit.astro";
 import DatabaseZap from "./icons/DatabaseZap.astro";
 import Sun from "./icons/Sun.astro";
 import TrendingUp from "./icons/TrendingUp.astro";
 
-const features = [
-	{
-		icon: "TrendingUp",
-		title: "Demand Forecasting",
-		description:
-			"Predict load curves hours to weeks ahead. Reduce imbalance costs and improve scheduling accuracy.",
-		color: "text-primary",
-	},
-	{
-		icon: "Sun",
-		title: "Renewable Prediction",
-		description:
-			"Forecast solar and wind output using weather-aware ML models tuned to your specific assets.",
-		color: "text-accent",
-	},
-	{
-		icon: "DatabaseZap",
-		title: "Automated Data Ingestion",
-		description:
-			"Connect SCADA, meters, and weather feeds. GridForesight cleans, validates, and stores your data automatically.",
-		color: "text-primary",
-	},
-	{
-		icon: "BrainCircuit",
-		title: "Custom Model Training",
-		description:
-			"Train forecasting models on your historical data with guided workflows. No ML expertise required.",
-		color: "text-accent",
-	},
-];
+const { heading, description, items, footerNote } = config.features;
 
 const iconComponents = {
 	TrendingUp,
@@ -50,17 +22,14 @@ const iconComponents = {
 				id="features-heading"
 				class="font-display text-3xl font-semibold tracking-tight text-slate-900 md:text-[40px]"
 			>
-				Everything you need to forecast with confidence
+				{heading}
 			</h2>
-			<p class="mt-4 text-lg text-slate-600">
-				From raw data to production forecasts, GridForesight handles the entire pipeline so
-				your team focuses on decisions, not data wrangling.
-			</p>
+			<p class="mt-4 text-lg text-slate-600">{description}</p>
 		</div>
 
 		<div class="grid grid-cols-1 gap-4 md:grid-cols-2">
 			{
-				features.map((feature, i) => {
+				items.map((feature, i) => {
 					const Icon = iconComponents[feature.icon as keyof typeof iconComponents];
 					return (
 						<div
@@ -80,9 +49,7 @@ const iconComponents = {
 			}
 		</div>
 
-		<p class="mt-6 text-center text-sm text-slate-500">
-			Plus real-time monitoring and portfolio-level analytics.
-		</p>
+		<p class="mt-6 text-center text-sm text-slate-500">{footerNote}</p>
 	</div>
 </section>
 

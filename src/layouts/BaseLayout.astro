@@ -3,16 +3,14 @@ import "../styles/global.css";
 
 import interRegular from "../assets/fonts/Inter-Regular.woff2";
 import satoshiBold from "../assets/fonts/Satoshi-Bold.woff2";
+import { config } from "../config";
 
 interface Props {
 	title: string;
 	description?: string;
 }
 
-const {
-	title,
-	description = "Predict energy demand and renewable output with machine learning. Automated data ingestion, custom model training, and real-time forecast monitoring.",
-} = Astro.props;
+const { title, description = config.site.defaultDescription } = Astro.props;
 
 const canonicalUrl = new URL(Astro.url.pathname, Astro.site).href;
 const ogImageUrl = new URL("/og-image.png", Astro.site).href;

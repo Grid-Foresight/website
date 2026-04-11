@@ -1,5 +1,8 @@
 ---
-const appUrl = "https://app.gridforesight.com";
+import { config } from "../config";
+
+const { appUrl } = config.site;
+const { heading, description, stats, cta } = config.hero;
 ---
 
 <section aria-labelledby="hero-heading" class="pt-32 pb-16 md:pt-[128px] md:pb-[96px]">
@@ -8,22 +11,22 @@ const appUrl = "https://app.gridforesight.com";
 			id="hero-heading"
 			class="hero-fade mx-auto max-w-4xl font-display text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl md:text-[64px]"
 		>
-			Accurate energy forecasts, powered by ML
+			{heading}
 		</h1>
 
 		<p
 			class="hero-fade hero-delay-1 mx-auto mt-6 max-w-[680px] text-lg text-slate-600 md:text-xl"
 		>
-			GridForesight combines automated data ingestion with advanced ML models to deliver
-			forecasts that energy operators actually trust.
+			{description}
 		</p>
 
 		<p class="hero-fade hero-delay-1 mt-4 text-sm text-slate-500">
-			<span class="font-mono font-semibold text-slate-900">40%</span> more accurate
-			<span class="mx-1.5">&middot;</span>
-			<span class="font-mono font-semibold text-slate-900">200+</span> assets monitored
-			<span class="mx-1.5">&middot;</span>
-			<span class="font-mono font-semibold text-slate-900">5B+</span> data points
+			{stats.map((stat, i) => (
+				<>
+					{i > 0 && <span class="mx-1.5">&middot;</span>}
+					<span class="font-mono font-semibold text-slate-900">{stat.value}</span> {stat.label}
+				</>
+			))}
 		</p>
 
 		<div class="hero-fade hero-delay-2 mt-10 flex items-center justify-center">
@@ -33,7 +36,7 @@ const appUrl = "https://app.gridforesight.com";
 				target="_blank"
 				rel="noopener noreferrer"
 			>
-				Start Forecasting
+				{cta}
 			</a>
 		</div>
 
