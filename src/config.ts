@@ -10,62 +10,62 @@ export const config = {
 		/** App/dashboard URL (no trailing slash) */
 		appUrl: "https://app.gridforesight.com",
 		defaultDescription:
-			"Predict energy demand and renewable output with machine learning. Automated data ingestion, custom model training, and real-time forecast monitoring.",
+			"Forecast power demand for up to 20 years ahead. Automated data ingestion, custom model training, and real-time forecast monitoring.",
 	},
 
 	// ── Hero Section ───────────────────────────────────────────
 	hero: {
 		/** Main heading — keep under ~50 chars for mobile */
-		heading: "Accurate energy forecasts, powered by ML",
+		heading: "Long-term Electrical Demand Forecasts, Powered by AI",
 		/** Sub-heading description — keep under ~200 chars */
 		description:
-			"GridForesight combines automated data ingestion with advanced ML models to deliver forecasts that energy operators actually trust.",
+			"GridForesight combines automated data ingestion with advanced AI models to deliver forecasts with unprescedented spatio-temporal granularity that power sysyetms planners actually need.",
 		/** Key stats displayed below the description */
-		stats: [
-			{ value: "40%", label: "more accurate" },
-			{ value: "200+", label: "assets monitored" },
-			{ value: "5B+", label: "data points" },
+		//stats: [
+		//	{ value: "40%", label: "more accurate" },
+		//	{ value: "200+", label: "assets monitored" },
+		//	{ value: "5B+", label: "data points" },
 		],
+	},
 		/** Primary CTA button text */
 		cta: "Start Forecasting",
-	},
 
 	// ── Features Section ───────────────────────────────────────
 	features: {
 		heading: "Everything you need to forecast with confidence",
 		description:
-			"From raw data to production forecasts, GridForesight handles the entire pipeline so your team focuses on decisions, not data wrangling.",
+			"From raw data to forecast production forecasts, GridForesight handles the entire pipeline so your team focuses on decisions, not data wrangling.",
 		items: [
 			{
 				icon: "TrendingUp",
-				title: "Demand Forecasting",
+				title: "Temporal Granularity",
 				description:
-					"Predict load curves hours to weeks ahead. Reduce imbalance costs and improve scheduling accuracy.",
+					"Hiourly values or weekly, monthly or annual peak values: All convered!",
 				color: "text-primary",
 			},
 			{
 				icon: "Sun",
-				title: "Renewable Prediction",
+				title: "Spatial Granularity",
 				description:
-					"Forecast solar and wind output using weather-aware ML models tuned to your specific assets.",
+					"From regional system level, to planning areas, to points of deliveries to transformers to feeders: spatial granularity is only limited by your metering data!",
 				color: "text-accent",
 			},
 			{
 				icon: "DatabaseZap",
 				title: "Automated Data Ingestion",
 				description:
-					"Connect SCADA, meters, and weather feeds. GridForesight cleans, validates, and stores your data automatically.",
+					"Connect SCADA, metering, and weather feeds. GridForesight cleans, validates, and stores your data automatically.",
 				color: "text-primary",
 			},
 			{
 				icon: "BrainCircuit",
 				title: "Custom Model Training",
 				description:
-					"Train forecasting models on your historical data with guided workflows. No ML expertise required.",
+					"Train forecasting models on your historical data with guided workflows. No coding required.",
 				color: "text-accent",
 			},
 		],
-		footerNote: "Plus real-time monitoring and portfolio-level analytics.",
+		footerNote: "Plus fkexible visulaization, portfolio-level analytics, and much more!",
 	},
 
 	// ── How It Works Section ───────────────────────────────────
@@ -75,26 +75,26 @@ export const config = {
 			{
 				title: "Connect Your Data",
 				description:
-					"Link your meters, SCADA systems, and weather feeds. We handle ingestion and validation.",
+					"Link your data systems, and we handle ingestion and validation.",
 			},
 			{
 				title: "Train Your Models",
 				description:
-					"Select your target variable and training period. GridForesight builds ML models tailored to your assets.",
+					"Select your target variable and training period. GridForesight builds models tailored to your assets.",
 			},
 			{
 				title: "Forecast and Monitor",
 				description:
-					"Deploy forecasts to production. Track accuracy in real time and retrain when conditions change.",
+					"Deploy trained models to production, generate forecasts, compare models, track accuracy and retrain when conditions change.",
 			},
 		],
 	},
 
 	// ── Final CTA Section ──────────────────────────────────────
 	cta: {
-		heading: "Ready to forecast with confidence?",
+		heading: "Ready to streamline your forecasting workflows with confidence?",
 		description:
-			"Join the energy operators already using GridForesight to make faster, more accurate decisions.",
+			"Contact us.",
 		button: "Start Forecasting",
 	},
 
@@ -106,7 +106,7 @@ export const config = {
 
 	// ── Footer ─────────────────────────────────────────────────
 	footer: {
-		tagline: "ML-powered energy forecasting",
+		tagline: "AI-powered energy forecasting",
 		copyright: "2026 GridForesight Inc. All rights reserved.",
 		builtIn: "Built in Canada",
 		productLinks: [
