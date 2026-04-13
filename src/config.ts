@@ -88,17 +88,31 @@ export const config = {
 		],
 	},
 
-	// ── Final CTA Section ──────────────────────────────────────
+	// ── Contact / Final CTA Section ────────────────────────────
 	cta: {
 		heading: "Ready to streamline your forecasting workflows with confidence?",
 		description: "Contact us.",
-		button: "Start Forecasting",
+		form: {
+			accessKey: "55a4ef65-5503-4112-bd84-fb92cff80552",
+			emailSubject: "New contact from GridForesight.com",
+			fields: {
+				name: { label: "Name", placeholder: "Jane Smith" },
+				email: { label: "Email", placeholder: "jane@utility.com" },
+				organization: { label: "Organization (optional)", placeholder: "Power & Light Co." },
+				message: { label: "Message", placeholder: "Tell us about your forecasting needs..." },
+			},
+			submitButton: "Send Message",
+			submittingButton: "Sending…",
+			successMessage: "Message sent! We'll be in touch shortly.",
+			errorMessage: "Something went wrong. Please try again or email us directly.",
+		},
 	},
 
 	// ── Navigation ─────────────────────────────────────────────
 	nav: [
 		{ label: "Features", href: "#features" },
 		{ label: "How It Works", href: "#how-it-works" },
+		{ label: "Contact", href: "#contact" },
 	],
 
 	// ── Footer ─────────────────────────────────────────────────
@@ -109,6 +123,7 @@ export const config = {
 		productLinks: [
 			{ label: "Features", href: "#features" },
 			{ label: "How It Works", href: "#how-it-works" },
+			{ label: "Contact", href: "#contact" },
 		],
 	},
 };
