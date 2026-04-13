@@ -2,7 +2,8 @@
 import { config } from "../config";
 
 const { appUrl } = config.site;
-const { heading, description, stats, cta } = config.hero;
+const { heading, description, buttonLabel } = config.hero;
+// const { stats } = config.hero;
 ---
 
 <section aria-labelledby="hero-heading" class="pt-32 pb-16 md:pt-[128px] md:pb-[96px]">
@@ -20,6 +21,7 @@ const { heading, description, stats, cta } = config.hero;
 			{description}
 		</p>
 
+		{/** Stats hidden — uncomment in config.ts and below to show
 		<p class="hero-fade hero-delay-1 mt-4 text-sm text-slate-500">
 			{stats.map((stat, i) => (
 				<>
@@ -28,6 +30,7 @@ const { heading, description, stats, cta } = config.hero;
 				</>
 			))}
 		</p>
+		*/}
 
 		<div class="hero-fade hero-delay-2 mt-10 flex items-center justify-center">
 			<a
@@ -36,7 +39,7 @@ const { heading, description, stats, cta } = config.hero;
 				target="_blank"
 				rel="noopener noreferrer"
 			>
-				{cta}
+				{buttonLabel}
 			</a>
 		</div>
 

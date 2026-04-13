@@ -19,28 +19,27 @@ export const config = {
 		heading: "Long-term Electrical Demand Forecasts, Powered by AI",
 		/** Sub-heading description — keep under ~200 chars */
 		description:
-			"GridForesight combines automated data ingestion with advanced AI models to deliver forecasts with unprescedented spatio-temporal granularity that power sysyetms planners actually need.",
-		/** Key stats displayed below the description */
-		//stats: [
-		//	{ value: "40%", label: "more accurate" },
-		//	{ value: "200+", label: "assets monitored" },
-		//	{ value: "5B+", label: "data points" },
-		],
-	},
+			"GridForesight combines automated data ingestion with advanced AI models to deliver forecasts with unprecedented spatio-temporal granularity that power systems planners actually need.",
+		/** Key stats displayed below the description — uncomment to show */
+		// stats: [
+		// 	{ value: "40%", label: "more accurate" },
+		// 	{ value: "200+", label: "assets monitored" },
+		// 	{ value: "5B+", label: "data points" },
+		// ],
 		/** Primary CTA button text */
-		cta: "Start Forecasting",
+		buttonLabel: "Start Forecasting",
+	},
 
 	// ── Features Section ───────────────────────────────────────
 	features: {
 		heading: "Everything you need to forecast with confidence",
 		description:
-			"From raw data to forecast production forecasts, GridForesight handles the entire pipeline so your team focuses on decisions, not data wrangling.",
+			"From raw data to forecast production, GridForesight handles the entire pipeline so your team focuses on decisions, not data wrangling.",
 		items: [
 			{
 				icon: "TrendingUp",
 				title: "Temporal Granularity",
-				description:
-					"Hiourly values or weekly, monthly or annual peak values: All convered!",
+				description: "Hourly values or weekly, monthly or annual peak values: All covered!",
 				color: "text-primary",
 			},
 			{
@@ -65,7 +64,7 @@ export const config = {
 				color: "text-accent",
 			},
 		],
-		footerNote: "Plus fkexible visulaization, portfolio-level analytics, and much more!",
+		footerNote: "Plus flexible visualization, portfolio-level analytics, and much more!",
 	},
 
 	// ── How It Works Section ───────────────────────────────────
@@ -74,8 +73,7 @@ export const config = {
 		steps: [
 			{
 				title: "Connect Your Data",
-				description:
-					"Link your data systems, and we handle ingestion and validation.",
+				description: "Link your data systems, and we handle ingestion and validation.",
 			},
 			{
 				title: "Train Your Models",
@@ -93,8 +91,7 @@ export const config = {
 	// ── Final CTA Section ──────────────────────────────────────
 	cta: {
 		heading: "Ready to streamline your forecasting workflows with confidence?",
-		description:
-			"Contact us.",
+		description: "Contact us.",
 		button: "Start Forecasting",
 	},
 
