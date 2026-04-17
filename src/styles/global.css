@@ -1,1 +1,162 @@
 @import "tailwindcss";
+
+/* ── Font Faces ────────────────────────────────────────────────── */
+
+@font-face {
+	font-family: "Satoshi";
+	src: url("../assets/fonts/Satoshi-Bold.woff2") format("woff2");
+	font-weight: 700;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Inter";
+	src: url("../assets/fonts/Inter-Regular.woff2") format("woff2");
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Inter";
+	src: url("../assets/fonts/Inter-SemiBold.woff2") format("woff2");
+	font-weight: 600;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "JetBrains Mono";
+	src: url("../assets/fonts/JetBrainsMono-Bold.woff2") format("woff2");
+	font-weight: 700;
+	font-style: normal;
+	font-display: swap;
+}
+
+/* ── Design Tokens ─────────────────────────────────────────────── */
+
+@theme {
+	--color-primary: #2563eb;
+	--color-primary-hover: #1d4ed8;
+	--color-accent: #0d9488;
+	--color-accent-hover: #0f766e;
+
+	--font-display: "Satoshi", system-ui, sans-serif;
+	--font-body: "Inter", system-ui, sans-serif;
+	--font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+	--radius-default: 10px;
+	--width-content: 1280px;
+}
+
+/* ── Base Styles ───────────────────────────────────────────────── */
+
+@layer base {
+	html {
+		font-family: var(--font-body);
+		line-height: 1.6;
+		color: var(--color-slate-900);
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+	}
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		font-family: var(--font-display);
+		line-height: 1.15;
+		letter-spacing: -0.02em;
+	}
+
+	*:focus-visible {
+		outline: 2px solid var(--color-primary);
+		outline-offset: 2px;
+	}
+
+	/* Skip-to-content link */
+	.skip-to-content {
+		position: absolute;
+		left: -9999px;
+		top: 0;
+		z-index: 100;
+		padding: 12px 24px;
+		background: var(--color-primary);
+		color: white;
+		font-weight: 600;
+		font-size: 14px;
+		border-radius: 0 0 var(--radius-default) 0;
+		text-decoration: none;
+	}
+
+	.skip-to-content:focus {
+		left: 0;
+	}
+}
+
+/* ── Animations ────────────────────────────────────────────────── */
+
+@media (prefers-reduced-motion: no-preference) {
+	@keyframes fade-in-up {
+		from {
+			opacity: 0;
+			transform: translateY(12px);
+		}
+		to {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+
+	.hero-fade {
+		opacity: 0;
+		animation: fade-in-up 500ms ease-out forwards;
+	}
+
+	.hero-delay-1 {
+		animation-delay: 80ms;
+	}
+	.hero-delay-2 {
+		animation-delay: 160ms;
+	}
+	.hero-delay-3 {
+		animation-delay: 240ms;
+	}
+
+	/* Scroll entrance for feature cards */
+	.animate-on-scroll {
+		opacity: 0;
+		transform: translateY(16px);
+		transition:
+			opacity 400ms ease-out,
+			transform 400ms ease-out;
+	}
+
+	.animate-on-scroll.visible {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+/* ── Form field validation state ───────────────────────────── */
+
+.field-invalid {
+	border-color: #f87171;
+}
+
+.field-invalid:focus {
+	border-color: #f87171;
+	--tw-ring-color: rgb(248 113 113 / 0.2);
+}
+
+/* Ensure elements are visible when reduced motion is preferred */
+@media (prefers-reduced-motion: reduce) {
+	.hero-fade,
+	.animate-on-scroll {
+		opacity: 1;
+		transform: none;
+	}
+}

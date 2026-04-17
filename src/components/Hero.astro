@@ -1,0 +1,105 @@
+---
+import { config } from "../config";
+
+const { appUrl } = config.site;
+const { heading, description, buttonLabel } = config.hero;
+// const { stats } = config.hero;
+---
+
+<section aria-labelledby="hero-heading" class="pt-32 pb-16 md:pt-[128px] md:pb-[96px]">
+	<div class="mx-auto max-w-[var(--width-content)] px-6 text-center">
+		<h1
+			id="hero-heading"
+			class="hero-fade mx-auto max-w-4xl font-display text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl md:text-[64px]"
+		>
+			{heading}
+		</h1>
+
+		<p
+			class="hero-fade hero-delay-1 mx-auto mt-6 max-w-[680px] text-lg text-slate-600 md:text-xl"
+		>
+			{description}
+		</p>
+
+		{/** Stats hidden — uncomment in config.ts and below to show
+		<p class="hero-fade hero-delay-1 mt-4 text-sm text-slate-500">
+			{stats.map((stat, i) => (
+				<>
+					{i > 0 && <span class="mx-1.5">&middot;</span>}
+					<span class="font-mono font-semibold text-slate-900">{stat.value}</span> {stat.label}
+				</>
+			))}
+		</p>
+		*/}
+
+		<div class="hero-fade hero-delay-2 mt-10 flex items-center justify-center">
+			<a
+				href={appUrl}
+				class="inline-flex rounded-[var(--radius-default)] bg-primary px-8 py-3.5 text-base font-semibold text-white transition-all duration-200 hover:scale-[1.02] hover:bg-primary-hover focus-visible:ring-2 focus-visible:ring-primary/50 focus-visible:ring-offset-2"
+				target="_blank"
+				rel="noopener noreferrer"
+			>
+				{buttonLabel}
+			</a>
+		</div>
+
+		<!-- Hero visualization: abstract forecast chart -->
+		<div class="hero-fade hero-delay-3 mt-16 hidden md:block">
+			<svg
+				viewBox="0 0 1280 400"
+				fill="none"
+				xmlns="http://www.w3.org/2000/svg"
+				class="mx-auto w-full max-w-[var(--width-content)]"
+				aria-hidden="true"
+			>
+				<!-- Grid lines -->
+				<line x1="0" y1="80" x2="1280" y2="80" stroke="#e2e8f0" stroke-width="0.5" />
+				<line x1="0" y1="160" x2="1280" y2="160" stroke="#e2e8f0" stroke-width="0.5" />
+				<line x1="0" y1="240" x2="1280" y2="240" stroke="#e2e8f0" stroke-width="0.5" />
+				<line x1="0" y1="320" x2="1280" y2="320" stroke="#e2e8f0" stroke-width="0.5" />
+				<line x1="160" y1="40" x2="160" y2="380" stroke="#e2e8f0" stroke-width="0.5" />
+				<line x1="320" y1="40" x2="320" y2="380" stroke="#e2e8f0" stroke-width="0.5" />
+				<line x1="480" y1="40" x2="480" y2="380" stroke="#e2e8f0" stroke-width="0.5" />
+				<line x1="640" y1="40" x2="640" y2="380" stroke="#e2e8f0" stroke-width="0.5" />
+				<line x1="800" y1="40" x2="800" y2="380" stroke="#e2e8f0" stroke-width="0.5" />
+				<line x1="960" y1="40" x2="960" y2="380" stroke="#e2e8f0" stroke-width="0.5" />
+				<line x1="1120" y1="40" x2="1120" y2="380" stroke="#e2e8f0" stroke-width="0.5" />
+
+				<!-- Confidence band (teal, low opacity) -->
+				<path
+					d="M80 280 Q240 220 400 200 Q560 180 720 140 Q880 100 1040 120 Q1120 130 1200 110
+					   L1200 190 Q1120 210 1040 200 Q880 180 720 220 Q560 260 400 280 Q240 300 80 340 Z"
+					fill="#0d9488"
+					opacity="0.08"
+				/>
+				<path
+					d="M80 260 Q240 210 400 190 Q560 170 720 130 Q880 90 1040 110 Q1120 120 1200 100
+					   L1200 200 Q1120 220 1040 210 Q880 190 720 230 Q560 270 400 290 Q240 310 80 350 Z"
+					fill="#0d9488"
+					opacity="0.06"
+				/>
+
+				<!-- Forecast curve (primary blue) -->
+				<path
+					d="M80 300 Q240 250 400 240 Q560 220 720 180 Q880 140 1040 160 Q1120 170 1200 150"
+					stroke="#2563eb"
+					stroke-width="2.5"
+					stroke-linecap="round"
+					fill="none"
+				/>
+
+				<!-- Data point nodes -->
+				<circle cx="80" cy="300" r="4" fill="#2563eb" />
+				<circle cx="320" cy="245" r="4" fill="#2563eb" />
+				<circle cx="560" cy="218" r="4" fill="#2563eb" />
+				<circle cx="800" cy="160" r="4" fill="#2563eb" />
+				<circle cx="1040" cy="160" r="4" fill="#2563eb" />
+				<circle cx="1200" cy="150" r="4" fill="#2563eb" />
+
+				<!-- Subtle highlight rings on key data points -->
+				<circle cx="800" cy="160" r="8" stroke="#2563eb" stroke-width="1" fill="none" opacity="0.3" />
+				<circle cx="1200" cy="150" r="8" stroke="#2563eb" stroke-width="1" fill="none" opacity="0.3" />
+			</svg>
+		</div>
+	</div>
+</section>

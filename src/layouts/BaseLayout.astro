@@ -1,0 +1,58 @@
+---
+import "../styles/global.css";
+
+import interRegular from "../assets/fonts/Inter-Regular.woff2";
+import satoshiBold from "../assets/fonts/Satoshi-Bold.woff2";
+import { config } from "../config";
+
+interface Props {
+	title: string;
+	description?: string;
+}
+
+const { title, description = config.site.defaultDescription } = Astro.props;
+
+const canonicalUrl = new URL(Astro.url.pathname, Astro.site).href;
+const ogImageUrl = new URL("/og-image.png", Astro.site).href;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="theme-color" content="#ffffff" />
+
+		<title>{title}</title>
+		<meta name="description" content={description} />
+		<link rel="canonical" href={canonicalUrl} />
+
+		<!-- Favicons -->
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" href="/favicon.ico" />
+		<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+		<!-- Open Graph -->
+		<meta property="og:type" content="website" />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:image" content={ogImageUrl} />
+		<meta property="og:url" content={canonicalUrl} />
+
+		<!-- Twitter Card -->
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content={title} />
+		<meta name="twitter:description" content={description} />
+		<meta name="twitter:image" content={ogImageUrl} />
+
+		<!-- Font Preloads -->
+		<link rel="preload" href={satoshiBold} as="font" type="font/woff2" crossorigin />
+		<link rel="preload" href={interRegular} as="font" type="font/woff2" crossorigin />
+
+		<meta name="generator" content={Astro.generator} />
+	</head>
+	<body class="bg-white text-slate-900">
+		<a href="#main-content" class="skip-to-content">Skip to content</a>
+		<slot />
+	</body>
+</html>
